@@ -1,0 +1,36 @@
+.scroll-search {
+    width: 100%;
+    overflow-x: auto;
+
+}
+
+.loyality-search-details {
+    padding: 10px;
+    display: flex;
+    background-color: white;
+    flex-wrap: wrap;
+}
+
+.loalty-point {}
+
+.search-field-value,
+.loyalty-search {
+    margin: 10px;
+    min-width: 16rem;
+}
+
+.loyalty-search input {
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+.loyalty-search select {
+    width: 90%;
+}
+
+.loyalty-search button {
+    border: none;
+    padding: 7px;
+    border-radius: 4px;
+    color: white;
+}

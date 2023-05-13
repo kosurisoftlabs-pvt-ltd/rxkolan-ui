@@ -1,0 +1,14 @@
+.btn-style{
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    background-color: rgb(223, 66, 66);
+    text-decoration: none;
+    border: none;
+    padding: 8px 12px !important;
+    /* width: 100px; */
+    /* height: 40px; */
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}

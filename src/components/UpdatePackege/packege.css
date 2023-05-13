@@ -1,0 +1,31 @@
+.upPackItem{
+    padding: 5px;
+    box-shadow: 0px 2px 10px -5px #000000;
+    font-size: 70px;
+    margin-bottom: 20px;
+    height: 40px;
+    width: 90%;
+}
+.upPackItem input[type="checkbox"]{
+    width: 10%;
+    height: 23px;
+    
+}
+.upPackItem label{
+    width: 90%;
+    height: 23px;
+
+    padding: 10px;
+    margin: 0px;
+}
+
+/* -------------------------------------------packege table---------------------------------------- */
+
+.packege-table-body{
+    width: 93%;
+}
+
+.package-btn{
+    width: unset;
+    border-radius: unset;
+}

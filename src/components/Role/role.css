@@ -1,0 +1,32 @@
+.update-role-btn {
+    background-color: green;
+    border: none;
+    padding: 4px 20px;
+    border-radius: 4px;
+    color: white;
+    margin: 20px 0;
+    font-size: 1.2rem !important;
+
+}
+
+.form-group-select {
+    font-size: 1.2rem !important;
+    margin: 10px 0;
+    padding: 10px 200px;
+
+}
+
+.form-group {
+    font-size: 1.2rem !important;
+    margin: 10px 0;
+}
+
+.roleCheckBox {
+    margin: 5px
+}
+
+.role-btn-container {
+    /* display: flex;
+    justify-content: center; */
+    padding: 10px 200px;
+}

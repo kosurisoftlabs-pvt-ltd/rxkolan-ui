@@ -1,0 +1,236 @@
+/*------------------------------------------------------ logo----------------------------------------------------------- */
+
+.logo-dashboard {
+  font-size: 24px;
+  padding: 3px 0px 0 5px;
+}
+
+.logo-dashboard img {
+  height: 4.5rem;
+}
+
+.logo-dashboard-close {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+
+.logo-dashboard button {
+  color: white;
+  border: none;
+  font-weight: bolder;
+  background-color: #188baa;
+  float: inline-end;
+  position: absolute;
+  left: 20%;
+  /* background: white; */
+  border-radius: 60%;
+  /* width: 40px;
+  height: 40px;
+  padding: 4px; */
+
+
+}
+
+/*------------------------------------------------------- toggle sidebar--------------------------------------  */
+.close-sidebar i,
+.open-sidebar i {
+  width: 20px;
+  font-size: 2rem;
+
+
+}
+
+.logo-dashboard-close img {
+  height: 3.5rem;
+}
+
+
+.logo-dashboard-close button {
+  color: #fff;
+  border: none;
+  font-weight: bolder;
+  background-color: #188baa;
+
+}
+
+/*------------------------------------------------------- sidebar-opne- menu ------------------------------------------ */
+
+.collapsible-menu {
+  position: relative;
+  padding: 5px 0 5px 1px;
+}
+
+.sum-menu {
+  cursor: pointer;
+}
+
+
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 25%;
+  background-color: #188baa;
+  color: white;
+  max-width: 30%;
+  overflow: auto;
+  font-size: 15px !important;
+  height: 100vh;
+
+
+}
+
+
+/*  */
+
+.side-navb {
+  /* padding: 2px; */
+  line-height: 2.43;
+  font-size: 15px;
+  display: flex;
+  opacity: .85;
+  font-weight: 500;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.side-navb a {
+  text-decoration: none;
+  color: #fff;
+  width: 100%;
+  margin: 0px;
+
+}
+
+.side-navb i {
+  color: white;
+  font-weight: 900;
+  margin-left: 11px;
+  padding: 7px;
+
+}
+
+.dashboard-menu {
+  width: 260px;
+  padding: 3px;
+}
+
+.sum-menu a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.7;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 2.43;
+
+}
+
+.side-nav-T {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+
+}
+
+.active {
+  /* background-color: #28a745; */
+  opacity: 1 !important;
+}
+
+.side-navb:hover {
+  background-color: rgb(199, 199, 230);
+}
+
+
+/* ----------------------------------------------sub menu ------------------------------------------------------ */
+.accordion-item {
+  border: unset;
+}
+
+ul {
+  padding: 8px;
+}
+
+
+.accordion-button {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 2.43;
+}
+
+.accordion-item .accordion-header button {
+  background-color: #188baa;
+  color: #fff;
+}
+
+.accordion-body {
+  background-color: #188baa;
+  color: white;
+}
+
+/* --------------------------------------------toggle------------------------------------------------------------ */
+.sidebar {
+  z-index: 1;
+  width: 4%;
+  background-color: #188baa;
+  height: 100vh;
+  /* height: 99vh; */
+  clear: both;
+
+
+
+}
+
+
+/* ---------------------------------------------sidebar closed---------------------------------------------------- */
+.nav-closed {
+  position: absolute;
+  left: 100%;
+  top: 15px;
+  transform: rotate(1turn) !important;
+
+
+
+
+  /* transform: rotate(360deg); */
+}
+
+.nav-closed ul {
+  opacity: .8;
+  line-height: 35px;
+  width: 200px;
+  list-style: none;
+  background-color: green;
+  /* transform: rotate(180deg); */
+  /* transform: rotate(360deg); */
+
+}
+
+
+/* ------------------------------------------------sidebar open----------------------------------------------------- */
+.nav-open ul {
+  line-height: 35px;
+
+
+
+  /* padding-left: unset; */
+}
+
+.nav-open {
+  width: 100%;
+  transition: all 0.25s;
+
+}
+
+.nav-open-menu {
+  padding-left: unset;
+
+}
+
+
+.accordion-button:hover {
+  background: rgb(59, 173, 85) !important;
+  /* background: white !important; */
+}

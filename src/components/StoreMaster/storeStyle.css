@@ -1,0 +1,102 @@
+/* ------------------------------------Add store ------------------------------------------------- */
+
+.store-field select {
+    border-radius: 5px;
+    border: 0.1px solid gray;
+}
+
+.store-content {
+    /* width: max-content; */
+    padding: 0 15px;
+    /* height: 45rem; */
+    /* overflow: auto; */
+}
+
+.add-store {
+    margin: 5px 40px;
+    font-size: 14px;
+}
+
+.add-store .btn {
+    width: auto;
+    font-size: 14px;
+    text-align: start !important;
+}
+
+.add-ambulance-form {
+    margin: 10px auto;
+}
+
+.input-field-form .store-label {
+    display: block;
+    width: 180px;
+    padding: 0;
+}
+
+
+/* ------------------------------store manager---------------------- */
+.Add-manager-field {
+    width: 50%;
+}
+
+.Add-manager-field input {
+    width: 95%;
+    padding: 5px;
+    height: 48px;
+    border: 1px solid gray !important;
+}
+
+.Add-manager-field select {
+    width: 100% !important;
+    padding: 5px;
+    height: 48px;
+    border: 1px solid gray !important;
+}
+
+/* ----------------------------------------------------------------------------------------------------------- */
+.input-field-form input {
+    border: 1px solid gray;
+    /* wi */
+}
+
+.store-field input {
+    border: .5px solid 2f2c2c;
+    width: 95%;
+}
+
+
+/* ---------------------------------------------------update store--------------------------------- */
+
+.update-store {
+    width: 60%;
+    margin: 20px auto;
+
+}
+
+
+
+.update-btn-style {
+    text-align: center;
+}
+
+.update-btn-style button {
+    width: 200px;
+
+}
+
+.store_table tr:nth-child(2n) {
+    background-color: #f0f2fa;
+}
+
+.store_table tr:nth-child(2n+1) {
+    background-color: #e4e6ee;
+}
+
+.close-btn {
+    height: 20px !important;
+    background: blue !important;
+    opacity: none !important;
+    opacity: 1 !important;
+    padding: 7px !important;
+    color: white;
+}

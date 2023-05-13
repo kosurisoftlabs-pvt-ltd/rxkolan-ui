@@ -1,0 +1,113 @@
+/* -----------------------------------------------------Dashboard header css------------------------------ */
+.dashboard-header {
+  background-color: #188baa;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+}
+
+/* -----------------------------------------------------home header css---------------------------------------- */
+.header{
+    background-color: #188baa;
+    color: white;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    
+  }
+
+  .header .role{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  .header .role h5{
+    font-size: 22px;
+  }
+
+  .top_contact-container{
+    height: 40px;
+    display: flex;
+    justify-content: space-between
+    ;
+    align-items: center;
+  }
+  .social-container a{
+    font-size: 12px;
+  }
+
+  .top_contact-container .tel_container a{
+    color: white;
+    text-decoration: none;
+    /* font-size: 2.5rem; */
+  }
+  
+  .top_contact-container .tel_container a:hover{
+    color: #fff;
+  }
+  
+
+  .top_contact-container .social-container a{
+    color: #f8f9fa !important;
+    text-decoration: none;
+    background-color: #343a40;
+    font-size: 16px;
+    padding: 4px;
+  }
+
+
+  .header-top{
+    background-color: #3bad55;
+  }
+
+  @media(max-width:425px){
+
+    .top_contact-container{
+    display: unset;
+   }
+    .top_contact-container .social-container a{
+     display: none;
+   }
+
+
+   /* .top_contact-container .tel_container a{
+
+  } */
+  
+  }
+.header-section{
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+.header-section .container{
+  background-color: green;
+  padding: 10px;
+  max-width: 100%;
+}
+.top_contact-container{
+  display: flex;
+  justify-content: space-around;
+}
+.tel_container a{
+  color: #fff;
+  text-decoration: none;
+}
+.tel_container a:hover{
+  color: #000;
+}
+.social-container{
+  display: none;
+}
+
+@media screen and (min-width:768px) {
+ .social-container{
+  display: block;
+ } 
+ .social-container a{
+  text-decoration: none;
+ }
+ 
+}

@@ -1,0 +1,98 @@
+.ambulance-container {
+    width: 100%;
+    background-color: #f0f2fa;
+    max-height: 91vh;
+    min-height: 91vh;
+    overflow: auto;
+    font-size: 14px;
+}
+
+.back-to-report {
+    width: 30%;
+    margin: 20px 0 0 50px;
+}
+
+/*----------------------------------------------------------- button-------------------------------------------------------------------  */
+
+.btn-style {
+    align-items: flex-start;
+    margin: 2px;
+    text-decoration: none;
+    border: none;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+/* -------------------------------------------------------search data------------------------------------------------ */
+
+.search-data {
+    width: 94%;
+    margin: 0 auto;
+    overflow-x: scroll;
+    /* border: 1px solid black; */
+}
+
+/* -----------------------------------------------------------ambulance-form----------------------------------------------- */
+
+.add-ambulance-form {
+    width: 95%;
+    margin: 40px auto;
+    padding: 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    /* background-color: #ffffff; */
+}
+
+.add-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.add-btn .reset {
+    width: 100px;
+    color: #000;
+}
+
+.add-btn input[type="reset"] {
+    margin: 5px;
+    width: 15%;
+    padding: 12px;
+    font-size: 19px;
+    color: #000;
+}
+
+.add-btn input[type="submit"] {
+    margin: 5px;
+    width: 17%;
+    padding: 12px;
+    font-size: 19px;
+}
+
+/* .add-btn .add-data{
+    width: 180px;
+
+} */
+
+/* --------------------------update Ambulance form----------------------------------------- */
+
+.update-ambulance-form {
+    width: 70%;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+
+/* --------------------------------------ambulance report-------------------------------------------------- */
+.ambulance-report-box {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.report-box {
+    overflow-x: scroll;
+}

@@ -1,0 +1,210 @@
+/*----------------------------- -----------add ambulance component -------------------------------------------------------*/
+
+.add-ambulance {
+    width: 100%;
+}
+
+.page-title {
+    width: 100%;
+    text-align: center;
+}
+
+.page-title h5 {
+    padding: 16px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-family: inherit;
+    line-height: 1.2;
+}
+
+/*---------------------------------------- Alert box--------------------------------------------------------------- */
+
+.alert-box {
+    width: 90%;
+    margin: 20px auto;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    text-align: center;
+    padding: 1rem;
+}
+
+.alert-msg {
+    color: #155724;
+}
+
+/*------------------------------------------- add form------------------------------------------------------------ */
+.form-field {
+    width: 100%;
+}
+
+.heading {
+    text-align: center;
+}
+
+.input-field-form {
+    margin: 5px;
+}
+
+.input-field-form label {
+    padding: 18px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 2.43;
+    display: inline-block;
+    width: 30%;
+    color: #e15461;
+}
+
+.input-field-form input {
+    width: 60%;
+    margin: 5px auto;
+}
+
+
+.input-field {
+    /* text-align: center; */
+    width: 90%;
+    height: 2.5em;
+    border-radius: 5px;
+    border: none;
+
+}
+
+.add-ambulance-form {
+    overflow-x: auto;
+}
+
+/*-------------------------------------------- button----------------------------------------------------- */
+
+.status-btn {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.d-btn {
+    width: 20px;
+}
+
+.back-to-report button {
+    color: #fff;
+    margin-bottom: 35px;
+    padding: 10px;
+    width: 270px;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+/*------------------------------------------------- search field---------------------------------------------------  */
+.search-details {
+
+
+    width: max-content;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    flex-wrap: wrap;
+    width: 77%;
+}
+
+/*------------------------------------------------- result details table---------------------------------------------------  */
+
+.table-container {
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.table-container tr th {
+    color: #fff;
+    background-color: #212529;
+    border-color: #32383e;
+}
+
+.verify-ambulance-search input {
+    margin: 10px 0 10px 30px;
+    display: block;
+    /* width: 100%; */
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.verify-ambulance-search button {
+    margin: 10px 0 10px 30px;
+    display: block;
+    width: max-content;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.table-container tr td button {
+    width: 65px;
+
+}
+
+
+/* ---------------------------------update Profile------------------------------------------------------------ */
+.update-profile {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.update-amb-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.update-amb-btn button {
+    width: 100px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.update-amb-btn button:nth-child(1) {
+    margin-right: 5px;
+}
+
+.update-amb-btn button:nth-child(2) {
+    color: #fff;
+}
+
+
+/*------------------------------------------- media query--------------------------------------------------- */
+
+@media(max-width:425px) {
+    .search-details {
+        width: 95%;
+        display: unset;
+    }
+
+    .search-field-value {
+        width: 60%;
+    }
+
+    .back-to-report button {
+        /* margin-bottom: 5px; */
+        width: 25rem;
+    }
+
+    .input-field-form label {
+        display: block;
+    }
+
+    .input-field-form {
+        width: 150%;
+    }
+}

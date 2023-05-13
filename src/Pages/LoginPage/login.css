@@ -1,0 +1,11 @@
+.login-card{
+    width: 100%;
+    height: 80vh;
+    background-image: linear-gradient(to bottom, #27a048, #132e77);
+}
+.admin-login-card{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #27a048, #132e77);
+
+}

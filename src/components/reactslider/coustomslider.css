@@ -1,0 +1,41 @@
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .slider.mobile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+  
+  .slider-container {
+    display: flex;
+    width: 200%;
+    transition: transform 0.3s ease;
+  }
+  
+  .slider-item {
+    width: 50%;
+  }
+  
+  .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .slider-button.prev {
+    left: 1rem;
+  }
+  
+  .slider-button.next {
+    right: 1rem;
+  }
+  

@@ -69,7 +69,7 @@ const Sidebar = () => {
       !drawer ? <>
         <div className="sidebar-container">
           <div className='logo-dashboard'>
-            <img src='https://project.bdxpo.com/kolanstores/homepage/images/logo.png' alt='logo' />
+            <img src='https://s3.amazonaws.com/rxkolan.com/images/logo.png' alt='logo' />
             <button onClick={(e) => setDrawer(!drawer)}>
               <span className='close-sidebar'>
                 <i class="fas fa-angle-left" ></i>
@@ -308,7 +308,7 @@ const Sidebar = () => {
                 <i className="fas fa-angle-right" ></i>
               </span>
             </button>
-            <img src='https://project.bdxpo.com/kolanstores/homepage/images/logo.png' alt='logo' />
+            <img src='https://s3.amazonaws.com/rxkolan.com/images/logo.png' alt='logo' />
 
 
 

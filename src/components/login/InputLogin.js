@@ -63,7 +63,7 @@ const InputLogin = () => {
     <div className="login-body">
       <div className="login-head">
         <img
-          src="https://project.bdxpo.com/kolanstores/homepage/images/logo.png"
+          src="https://s3.amazonaws.com/rxkolan.com/images/logo.png"
           alt="logo"
         />
       </div>

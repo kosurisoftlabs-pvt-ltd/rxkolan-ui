@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="container-fluid">
         <div className="logo">
          <Link to='/'><img
-            src="https://project.bdxpo.com/kolanstores/homepage/images/logo.png"
+            src="https://s3.amazonaws.com/rxkolan.com/images/logo.png"
             alt="logo"
           />
           </Link>

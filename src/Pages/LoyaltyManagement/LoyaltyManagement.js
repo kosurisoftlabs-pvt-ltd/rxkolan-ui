@@ -25,25 +25,34 @@ const LoyaltyManagement = () => {
     let { roleName ,storeId, } = useSelector((state) => state.auth);
     let {   storeList } = useSelector((state) => state.store);
 
+    const resetFields = ()=>{
+        setStoreIDs("")
+        setLoyaltyPoints("")
+        setSalesVolume("")
+        setFixedDiscountPercentage("")
+        setMinLoyaltyPoints("")
 
+
+    }
 
 
     // API Integration
     const ConfigureLoyaltyPoint=async(e)=>{
         try {
-
+            console.log(storeId,loyaltypoints,salesVolume,minLoyaltyPoints,fixedDiscountPercentage)
             e.preventDefault()
             if(storeId===""|| loyaltypoints==="" || salesVolume==="" ||minLoyaltyPoints==="" ||fixedDiscountPercentage===""){
                 toast.error("Please fill all the mendatory field")
             }else{
                 const payload = {
-                    storeId: roleName !== "SUPER ADMIN" ? storeId :storeIds,
+                    storeId: roleName !== "SUPER ADMIN" ? storeId[0] :storeIds,
                     loyaltyPoints: loyaltypoints,
                     salesVolume: salesVolume,
                     fixedDiscountPercentage: fixedDiscountPercentage,
                     minLoyaltyPoints: minLoyaltyPoints
                 }
                 await loyaltyConfigure(payload).unwrap()
+                resetFields()
                 toast.success("Loyalit Configured successfully")
             }
             console.log("Configure Loyalty Points",storeId,loyaltypoints,salesVolume,minLoyaltyPoints,fixedDiscountPercentage)
@@ -73,7 +82,7 @@ const LoyaltyManagement = () => {
                                 <input type="text" className="form-control" value={storeId} required readOnly />
                             </div> : <div className="search-field-value loyalty-search">
                                 <label for="" >Store ID*</label>
-                                <select name="storeCat" id="" className="form-control" onChange={(e) => setStoreIDs(e.target.value)} required>
+                                <select name="storeCat" id="" className="form-control" onChange={(e) => setStoreIDs(e.target.value)} required value={storeIds}>
                                 <option value={''}>Please Select</option>
                                     {storeList?.length > 0 && storeList.map((item, index) => {
                                         return <option key={index} value={item.id}>{item.id}</option>
@@ -96,7 +105,7 @@ const LoyaltyManagement = () => {
                                 </div> */}
                                 <div className='search-field-value loyalty-search'>
                                     <label>Sales Volume *</label><br />
-                                    <InputField type={"number"} name={"Ex. 100"} value={volume} handleChange={(e) => setVolume(e.target.value)} />
+                                    <InputField type={"number"} name={"Ex. 100"} value={salesVolume} handleChange={(e) => setSalesVolume(e.target.value)} />
                                 </div>
                                 <div className='search-field-value loyalty-search'>
                                     <label>Number of points *</label><br />
@@ -106,22 +115,22 @@ const LoyaltyManagement = () => {
                                     <label>Fixed Discount per 100 points *</label><br />
                                     <InputField type={"text"} name={"Ex. 2%"} value={fixedDiscountPercentage} handleChange={(e) => setFixedDiscountPercentage(e.target.value)} />
                                 </div>
-                                <div className='search-field-value loyalty-search'>
+                                {/* <div className='search-field-value loyalty-search'>
                                     <label>Total Sales Volume *</label><br />
                                     <InputField type={"number"} name={"Ex.100"} value={totalSales} handleChange={(e) => setTotalSales(e.target.value)} />
-                                </div>
+                                </div> */}
                                 <div className='search-field-value loyalty-search'>
                                     <label>Min Points t get loyalty discount *</label><br />
                                     <InputField type={"number"} name={"Ex. 100"} value={minLoyaltyPoints} handleChange={(e) => setMinLoyaltyPoints(e.target.value)} />
                                 </div>
-                                <div className='search-field-value loyalty-search'>
+                                {/* <div className='search-field-value loyalty-search'>
                                     <label>Sales volume to be *</label><br />
                                     <InputField type={"number"} name={"Ex. 100"} value={salesVolume} handleChange={(e) => setSalesVolume(e.target.value)} />
                                 </div>
                                 <div className='search-field-value loyalty-search'>
                                     <label>Total discount *</label><br />
                                     <InputField type={"number"} name={"Ex. 200"} value={totalDiscount} handleChange={(e) => setTotalDiscount(e.target.value)} />
-                                </div>
+                                </div> */}
                                 <div className='search-field-value loyalty-search'>
                                     <br />
                                     <Button name={"Search"} color={"#3bad55"} onClick={ConfigureLoyaltyPoint}  />

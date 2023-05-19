@@ -63,17 +63,26 @@ import SuperAdminLayout from './Layout/SuperAdminLayout/SuperAdminLayout';
 import AddRoleName from './Pages/RoleManagement/AddRoleName';
 import { useLazyGetAllStoresQuery } from './services/apis/StoreService';
 import { useEffect } from 'react';
+import DynamicLayout from './Layout/DynamicLayout/DynamicLayout';
+import DynamicDashboard from './Pages/DasboardPage/DynamicDashboard';
+import AddTask from './Pages/TaskManagement/AddTask';
+import { useLazyGetAllRolesQuery, useLazyGetAllTasksQuery } from './services/apis/RoleService';
 
 
 function App() {
 
   let  { roleName } = useSelector((state) => state.auth);
+  // let roleName = "SUPER ADMIN"
 
   const [getAllStores] = useLazyGetAllStoresQuery()
+  const [getAllRoles] = useLazyGetAllRolesQuery()
+  const [getAllTasks] = useLazyGetAllTasksQuery()
 
 
   useEffect(()=>{
     getAllStores()
+    getAllRoles()
+    getAllTasks()
   },[])
 
   // role based routing
@@ -140,6 +149,9 @@ function App() {
             <Route path='/super-admin/add-role-name' element={<SuperAdminLayout><AddRoleName /></SuperAdminLayout>}></Route>
             <Route path='/super-admin/add-role' element={<SuperAdminLayout><AddRole /></SuperAdminLayout>}></Route>
             <Route path='/super-admin/update-role' element={<SuperAdminLayout><UpdateRole /></SuperAdminLayout>}></Route>
+
+          {/* ---------------------------------Task Route----------------------------------------- */}
+          <Route path='/super-admin/add-task' element={<SuperAdminLayout><AddTask /></SuperAdminLayout>}></Route>
 
 
             {/* ----------------------------------nurse rourte---------------------------------------------------------- */}
@@ -309,6 +321,60 @@ function App() {
             {/* ------------------------------------Loyalty Point Route-------------------------------------------- */}
             <Route path='/storemanager/loyaltypoint' element={<ManagerLayout><RedeemLoyaltyPoint /></ManagerLayout>}></Route>
           </>}
+
+
+
+               {/* --------------------------Dynamic Role Role------------------------- */}
+
+
+          {
+            (roleName !== "STORE_MANAGER" &&  roleName !== "SUPER ADMIN" ) && <>
+            {/* <Route path='/store/manager' element={<ManagerLayout />}></Route> */}
+
+            <Route path='/role/:dynamicUser' element={<DynamicLayout> <DynamicDashboard /></DynamicLayout>}></Route>
+            <Route path='/role/:dynamicUser/add-ambulane' element={<DynamicLayout><AddAmbulance /></DynamicLayout>}></Route>
+            <Route path='/role/:dynamicUser/update-ambulane' element={<DynamicLayout><UpdateAmbulance /></DynamicLayout>}></Route>
+
+
+            {/* ------------------------------nurse route--------------------------------------------------- */}
+            <Route path='/role/:dynamicUser/location' element={<DynamicLayout></DynamicLayout>}></Route>
+            <Route path='/role/:dynamicUser/profile' element={<DynamicLayout></DynamicLayout>}></Route>
+            <Route path='/role/:dynamicUser/membership' element={<DynamicLayout></DynamicLayout>}></Route>
+            <Route path='/role/:dynamicUser/service' element={<DynamicLayout></DynamicLayout>}></Route>
+            <Route path='/role/:dynamicUser/update/price' element={<DynamicLayout></DynamicLayout>}></Route>
+
+
+            {/* ---------------------------------Diagnostice route-------------------------------------------------- */}
+
+            <Route path='/role/:dynamicUser/update/price' element={<DynamicLayout></DynamicLayout>}></Route>
+            <Route path='/role/:dynamicUser/update/price' element={<DynamicLayout></DynamicLayout>}></Route>
+            <Route path='/role/:dynamicUser/update/price' element={<DynamicLayout></DynamicLayout>}></Route>
+            <Route path='/role/:dynamicUser/update/price' element={<DynamicLayout></DynamicLayout>}></Route>
+            <Route path='/role/:dynamicUser/update/price' element={<DynamicLayout></DynamicLayout>}></Route>
+
+
+            {/* ------------------------------------Transaction Route-------------------------------------------- */}
+            <Route path='/role/:dynamicUser/transaction/purchase/invoice' element={<DynamicLayout><UploadPurchase /></DynamicLayout>}></Route>
+            <Route path='/role/:dynamicUser/transaction/purchase/upload' element={<DynamicLayout><UploadPurchase /></DynamicLayout>}></Route>
+            <Route path='/role/:dynamicUser/transaction/purchase/report' element={<DynamicLayout><Report /></DynamicLayout>}></Route>
+
+
+            <Route path='/role/:dynamicUser/transaction/sales/invoice' element={<DynamicLayout><UploadSales /></DynamicLayout>}></Route>
+            <Route path='/role/:dynamicUser/transaction/sales/upload' element={<DynamicLayout><UploadSales /></DynamicLayout>}></Route>
+            <Route path='/role/:dynamicUser/transaction/sales/report' element={<DynamicLayout><SalesReport /></DynamicLayout>}></Route>
+            {/*------------------------------------Stock Routes-------------------------------------------------- */}
+
+            <Route path='/role/:dynamicUser/upload-stock' element={<DynamicLayout><UploadStock /></DynamicLayout>}></Route>
+            <Route path='/role/:dynamicUser/report-stock' element={<DynamicLayout><StockReport /></DynamicLayout>}></Route>
+
+
+            {/* ------------------------------------Loyalty Point Route-------------------------------------------- */}
+            <Route path='/role/:dynamicUser/loyaltypoint' element={<DynamicLayout><RedeemLoyaltyPoint /></DynamicLayout>}></Route>
+          </>
+          }
+
+
+
 
           {/* --------------------------------Ambulance Dashboard----------------------------------- */}
 

@@ -47,6 +47,10 @@ const UploadSales = () => {
         console.log(res)
         setFile("")
         setStore_ID("")
+        setTimeout(()=>{
+
+          window.location.reload();
+        },1000)
         // navigate("/admin")
 
       } else {
@@ -54,6 +58,8 @@ const UploadSales = () => {
       }
     } catch (error) {
       toast.error('Error')
+      toast.error(error.response.data.responseMessage)
+
     }
 
 

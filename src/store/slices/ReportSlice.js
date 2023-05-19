@@ -16,6 +16,9 @@ const ReportSlice = createSlice({
     builder.addMatcher(endpoints.searchReport.matchFulfilled, (state, action) => {
       state.reportList = action?.payload?.purchaseReport;
     });
+    builder.addMatcher(endpoints.searchReport.matchRejected, (state, action) => {
+      state.reportList = []
+    });
 
   },
 });

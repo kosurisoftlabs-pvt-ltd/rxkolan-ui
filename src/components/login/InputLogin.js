@@ -39,15 +39,18 @@ const InputLogin = () => {
       toast.success("Logged In Successfully")
 
       }
-      if(response.data.roleName==='SUPER ADMIN'){
+      else if(response.data.roleName==='SUPER ADMIN'){
         navigate("/super-admin")
       toast.success("Logged In Successfully")
 
       }
-      if(response.data.roleName==='ADMIN'){
+      else if(response.data.roleName==='ADMIN'){
         navigate("/admin")
       toast.success("Logged In Successfully")
 
+      }else{
+        navigate("/role/dynamic")
+        toast.success("Logged In Successfully")
       }
 
     }

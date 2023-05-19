@@ -19,6 +19,7 @@ const LoyaltyPointDiscount = () => {
     const [loyaltyPoint, setLoyaltyPoint] = useState([])
     const [loyaltyDiscount] = useLoyaltyDiscountMutation()
 
+
     // API Integration
 
     const Search = async (e) => {
@@ -72,14 +73,14 @@ const LoyaltyPointDiscount = () => {
                                 <label for="" className="text-center">Phone Number*</label>
                                 <input type="number" className="form-control" placeholder="Ex. 1234567890" value={customerPhone} onChange={(e) => setCustomerPhone(e.target.value)} required />
                             </div>
-                            <div className="form-group loyality_item">
+                            {/* <div className="form-group loyality_item">
                                 <label for="" className="text-center">First Name*</label>
                                 <input type="text" className="form-control" placeholder="First name" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
                             </div>
                             <div className="form-group loyality_item">
                                 <label for="" className="text-center">Last Name*</label>
                                 <input type="text" className="form-control" placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)} />
-                            </div>
+                            </div> */}
                             <div className="form-group loyality_item">
                                 <label for="" className="text-center pt20 mb-4"></label>
                                 <input type="submit" className="form-control bg_self mt-2 btn-success" style={{ width: "max-content" }} value="Search" onClick={Search} />

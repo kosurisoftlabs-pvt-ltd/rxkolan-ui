@@ -19,6 +19,8 @@ import ReportSlice from './slices/ReportSlice';
 import SaleSlice from './slices/SaleSlice';
 import LoyaltySlice from './slices/LoyaltySlice';
 import StockSlice from './slices/StockSlice';
+import RoleSlice from './slices/RoleSlice';
+import MedicineSearchSlice from './slices/MedicineSearchSlice';
 
 
 const rootPersistConfig = {
@@ -34,7 +36,9 @@ const appReducer = combineReducers({
   report:ReportSlice,
   sales:SaleSlice,
   loyalty:LoyaltySlice,
-  stock:StockSlice
+  stock:StockSlice,
+  role:RoleSlice,
+  medicineSearch:MedicineSearchSlice
 
 });
 

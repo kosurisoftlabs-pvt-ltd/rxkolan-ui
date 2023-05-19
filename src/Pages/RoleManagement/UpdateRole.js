@@ -13,7 +13,7 @@ const UpdateRole = () => {
 
       <div className='add-ambulance-form'>
 
-        <Role />
+        <Role type={'update'}/>
 
       </div>
     </div>

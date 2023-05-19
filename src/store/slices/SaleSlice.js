@@ -16,6 +16,9 @@ const SaleSlice = createSlice({
     builder.addMatcher(endpoints.searchSales.matchFulfilled, (state, action) => {
       state.salesList = action?.payload?.saleReport;
     });
+    builder.addMatcher(endpoints.searchSales.matchRejected, (state, action) => {
+      state.salesList = [];
+    });
 
   },
 });

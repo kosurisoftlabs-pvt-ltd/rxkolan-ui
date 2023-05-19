@@ -24,10 +24,11 @@ const Report = () => {
 
     const [searchReport] = useSearchReportMutation()
     const handleSearchReport = async()=>{
+        console.log(storeId,storeIds)
         try {
 
             let payload = {
-            storeId:roleName !== "SUPER ADMIN" ? storeId :storeIds,
+            storeId:roleName !== "SUPER ADMIN" ? storeId[0] :storeIds,
             vendorName,
             dateFrom,
             dateTo,

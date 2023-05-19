@@ -16,7 +16,9 @@ const StockSlice = createSlice({
     builder.addMatcher(endpoints.searchStock.matchFulfilled, (state, action) => {
       state.stockList = action?.payload?.stockReport;
     });
-
+    builder.addMatcher(endpoints.searchStock.matchRejected, (state, action) => {
+      state.stockList = []
+    });
   },
 });
 

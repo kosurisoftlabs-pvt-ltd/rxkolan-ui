@@ -19,6 +19,8 @@ const CreateStore = () => {
 getAllStores()
  },[])
 
+
+
     console.log(storesAllData, "STORE_RESP")
     return (
         <>
@@ -30,12 +32,8 @@ getAllStores()
                 <Store />
 
 
-                <div className='add-ambulance-form'>
 
                     <StoreDetailsTable  storeData={storesAllData?.stores}/>
-
-
-                </div>
             </div>}
         </>
 

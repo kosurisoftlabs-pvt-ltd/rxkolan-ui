@@ -8,7 +8,7 @@ import { useLoyaltyRedeemMutation } from '../../services/apis/LoyalityPoints'
 const LoyaltyPointRedeem = ({ loyaltyPoint, setLoyaltyPoint }) => {
    console.log(loyaltyPoint,'LP')
     const [date, setDate] = useState("")
-    let {  loyaltyDiscountList } = useSelector((state) => state.loyalty);
+    let {  customerLoyaltyResponseList } = useSelector((state) => state.loyalty);
     let {  storeId } = useSelector((state) => state.auth);
 
 
@@ -22,13 +22,13 @@ const LoyaltyPointRedeem = ({ loyaltyPoint, setLoyaltyPoint }) => {
 
             const userData={
                dateOfDiscount:date,
-               firstName:loyaltyDiscountList?.firstName,
-               lastName:loyaltyDiscountList?.lastName,
-               storeId,
-               customerPhone:loyaltyDiscountList?.customerPhone,
-               totalSales: loyaltyDiscountList?.totalSalesVolume,
-               loyaltyPoints: loyaltyDiscountList?.loyaltyPoints,
-               discountAmount: loyaltyDiscountList?.discountEligible,
+               firstName:customerLoyaltyResponseList?.firstName,
+               lastName:customerLoyaltyResponseList?.lastName,
+               storeId:storeId[0],
+               customerPhone:customerLoyaltyResponseList?.phoneNumber,
+               totalSales: customerLoyaltyResponseList?.totalSalesVolume,
+               loyaltyPoints: customerLoyaltyResponseList?.loyaltyPoints,
+               discountAmount: customerLoyaltyResponseList?.discountEligible,
 
             }
             await loyaltyRedeem(userData).unwrap()
@@ -82,12 +82,12 @@ const LoyaltyPointRedeem = ({ loyaltyPoint, setLoyaltyPoint }) => {
                         </tr>
                     </> : <>
                         <tr>
-                            <th className="w200"><input type="text" className="form-control" value={loyaltyDiscountList?.customerPhone} readonly /></th>
-                            <td className="w200"><input type="text" className="form-control" value={loyaltyDiscountList?.firstName} /></td>
-                            <td className="w200"><input type="text" className="form-control" value={loyaltyDiscountList?.lastName}  readonly /></td>
-                            <td className="w200"><input type="text" className="form-control" value={loyaltyDiscountList?.totalSalesVolume} readonly /></td>
-                            <td className="w200"><input type="text" className="form-control" value={loyaltyDiscountList?.loyaltyPoints} readonly /></td>
-                            <td className="w200"><input type="text" className="form-control" value={loyaltyDiscountList?.discountEligible} readonly /></td>
+                            <th className="w200"><input type="number"  className="form-control" value={customerLoyaltyResponseList?.phoneNumber}  disabled/></th>
+                            <td className="w200"><input type="text" className="form-control" value={customerLoyaltyResponseList?.firstName} disabled/></td>
+                            <td className="w200"><input type="text" className="form-control" value={customerLoyaltyResponseList?.lastName}   disabled/></td>
+                            <td className="w200"><input type="text" className="form-control" value={customerLoyaltyResponseList?.totalSalesVolume} disabled /></td>
+                            <td className="w200"><input type="text" className="form-control" value={customerLoyaltyResponseList?.loyaltyPoints} disabled /></td>
+                            <td className="w200"><input type="text" className="form-control" value={customerLoyaltyResponseList?.discountEligible}  disabled/></td>
                             <td className="w200"><input type="date" className="form-control" value={date} onChange={(e) => setDate(e.target.value)} /></td>
                         </tr>
                     </>}

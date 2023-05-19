@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { endpoints } from '../../services/apis/LoyalityPoints';
 
 const initialState = {
-  loyaltyDiscountList:{},
+  customerLoyaltyResponseList:{},
 
 };
 
@@ -14,7 +14,7 @@ const LoyaltySlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addMatcher(endpoints.loyaltyDiscount.matchFulfilled, (state, action) => {
-      state.loyaltyDiscountList = action?.payload;
+      state.customerLoyaltyResponseList = action?.payload?.customerLoyaltyResponseList[0];
     });
 
   },

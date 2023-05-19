@@ -8,24 +8,17 @@ import './roleStyle.css'
 import Role from '../../components/Role/Role'
 const AddRole = () => {
   return (
-    // <div className='dashboard-design'>
-    //   <Sidebar />
-    //   <div className='dasboard-content'>
-    //     <Header User="Admin" />
+
         <div className='ambulance-container'>
           <Title title={"Add Role"} />
 
           <div className='add-ambulance-form role-list'>
 
-            {/*  */}
-          <Role/>
-            {/*  */}
+          <Role type={'add'}/>
 
           </div>
         </div>
-    //   </div>
 
-    // </div>
   )
 }
 

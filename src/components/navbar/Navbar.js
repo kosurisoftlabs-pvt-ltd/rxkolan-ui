@@ -1,21 +1,28 @@
 import React, { useState } from "react";
 import "./navbar.css";
 import { Link,useNavigate} from "react-router-dom";
+import { useLazySearchMedicineQuery } from "../../services/apis/SearchMedicine";
 const Navbar = () => {
   const navigate=useNavigate()
   const [medicine,setMedicine]=useState("")
   const [location,setLocation]=useState("")
+  const [service,setService]=useState("")
+
+  const [searchMedicine] = useLazySearchMedicineQuery()
 
     const handleSearch= async()=>{
-      // const params={
-      //   location:location,
-      //   medicine:medicine
-      // }
-      // console.log(location,medicine)
+    try {
+      let payload={
+        location:location,
+        medicine:medicine,
+        category:service
+      }
+      console.log(payload,'PL-services')
+      await searchMedicine(payload).unwrap()
       navigate("/search")
-
-      // search API
-    //  const res=searchMedicine(params)
+    } catch (error) {
+      console.log(error)
+    }
     }
 
   return (
@@ -50,7 +57,7 @@ const Navbar = () => {
         >
           <form className="d-flex flex-r form-block">
             <div className="left-block">
-            <select class="select">
+            <select class="select" value={service} onChange={(e)=>setService(e.target.value)}>
               <option selected> Services</option>
               <option value="Medicine">Medicine</option>
               <option value="Diagnostic">Diagnostic</option>
@@ -75,7 +82,7 @@ const Navbar = () => {
               value={location}
               onChange={(e)=>setLocation(e.target.value.toUpperCase())}
             />
-            <button className="btn btn-success" type="submit" onClick={handleSearch}>
+            <button className="btn btn-success" type="button" onClick={handleSearch}>
               <i className="fa-solid fa-magnifying-glass"></i>
             </button>
             </div>

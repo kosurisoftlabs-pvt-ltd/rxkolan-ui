@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState ,useRef} from 'react'
 import './storeStyle.css'
 import { useNavigate } from 'react-router-dom'
-import { useAddStoreMutation } from '../../services/apis/StoreService';
+import { useAddStoreMutation, useLazyGetAllStoresQuery } from '../../services/apis/StoreService';
 import { ToastContainer, toast } from 'react-toastify';
 
 
-const StoreTable = () => {
+
+
+const StoreTable = ({setStoreData,onClose}) => {
+const closeRef = useRef();
+
     const Navigate=useNavigate()
     const [storeType, setStoreType] = useState("")
     const [id, setID] = useState("")
@@ -22,12 +26,32 @@ const StoreTable = () => {
     const [ownerEmail, setOwnerEmail] = useState("")
     // API Integration
 
+
     const [addStore] = useAddStoreMutation()
+    const [getAllStores] = useLazyGetAllStoresQuery()
+
+    const resetStoreDetails = ()=>{
+        setStoreType("")
+        setID("")
+        setName("")
+        setPincode("")
+        setDistrict("")
+        setLocation("")
+        setTown("")
+        setOwner("")
+        setOwnerContact(0)
+        setOwnerAddress("")
+        setSecondaryContact(0)
+        setOwnerEmail("")
+        setState("")
+
+
+
+    }
 
     const addStoreDetails = async (e) => {
         try {
 
-            e.preventDefault()
             console.log(storeType, id,name,pincode,district,town,state,owner,location,ownerAddress,ownerContact,ownerEmail)
             // if(storeType==="" || id===""|| pincode===""||town===""||state===""||owner===""||district===""){
             //     return alert("Please fill all the mendatory field")
@@ -35,7 +59,9 @@ const StoreTable = () => {
             const userData= { storeType,id,name, pincode, district,location,town,state, owner, ownerAddress, ownerContact,secondaryContact, ownerEmail }
 
             await addStore(userData).unwrap()
-            toast.success("Store Added successfully")
+           alert("Store Added successfully")
+            getAllStores()
+            onClose()
 
         } catch (error) {
             toast.error(error.data.responseMessage)
@@ -54,7 +80,7 @@ const StoreTable = () => {
            <div className='form-field'>
                 <div className='store-field'>
                     <label className='store-label text-danger'>Store Category *</label>
-                    <select name="storeCat" id="" className="form-control" onChange={(e) => setStoreType(e.target.value)} required>
+                    <select name="storeCat" id="" className="form-control" onChange={(e) => setStoreType(e.target.value)} required value={storeType}>
                         <option value="" selected>Select...</option>
                         <option value="Pharmacy"  >Pharmacy</option>
                         <option value="Rice">Rice</option>
@@ -75,13 +101,13 @@ const StoreTable = () => {
                     </div>
 
                 </div>
-                {/* <div className="">
+                <div className="">
                     <div className="form-group w-100  mr-2">
                         <label for="" className="text-danger">Name*</label>
                         <input type="text" className="form-control" required value={name} onChange={(e) => setName(e.target.value)} />
                     </div>
 
-                </div> */}
+                </div>
 
 
                 <div className=''>
@@ -104,12 +130,12 @@ const StoreTable = () => {
 
                 </div>
 
-                {/* <div className=''>
+                <div className=''>
                     <div className="form-group w-100 ">
                         <label for="" className="text-danger">State*</label>
                         <input type="text" className="form-control" required value={state} onChange={(e) => setState(e.target.value)} />
                     </div>
-                </div> */}
+                </div>
 
                 <div className="d-flex ">
                     <div className="form-group w-100  me-2">
@@ -125,24 +151,23 @@ const StoreTable = () => {
                 </div>
                 <div className="form-group">
                     <label for="" className="text-danger">Owner Contact*</label>
-                    <input type="number" className="form-control" required value={ownerContact} onChange={(e) => setOwnerContact(e.target.value)} />
+                    <input type="number" className="form-control"  value={ownerContact} onChange={(e) => setOwnerContact(e.target.value)} />
                 </div>
                 <div className="form-group">
                     <label for="" className="text-danger">secondary Contact*</label>
-                    <input type="number" className="form-control" required value={secondaryContact} onChange={(e) => setSecondaryContact(e.target.value)} />
+                    <input type="number" className="form-control"  value={secondaryContact} onChange={(e) => setSecondaryContact(e.target.value)} />
                 </div>
                 <div className="form-group">
                     <label for="" className="text-danger">Email Id*</label>
-                    <input type="email" className="form-control" required value={ownerEmail} onChange={(e) => setOwnerEmail(e.target.value)} />
+                    <input type="email" className="form-control"  value={ownerEmail} onChange={(e) => setOwnerEmail(e.target.value)} />
                 </div>
                 <div className="">
 
                     <div className="w-100 p-1 mt-4">
                         <label className='store-label text-danger'></label>
-                        <button type="button" className="close-btn btn-close btn btn-primary me-3" data-bs-dismiss="modal" >Cancel</button>
-                        {/* <button type="button"  name="addAstore" className="btn btn-primary me-3" >Cancel</button> */}
-                        <button type="button"  name="addAstore" className="btn btn-success me-3" onClick= {addStoreDetails} >Add Stores</button>
-                        <button type="button"  name="addAstore" className="btn btn-warning me-3" onClick= {addStoreDetails} >Reset</button>
+                        <button type="button" className=" btn btn-primary me-3"   onClick={onClose} >Cancel</button>
+                        <button type="button"  name="addAstore" className="btn btn-success me-3"  onClick= {addStoreDetails} >Add Stores</button>
+                        <button type="button"  name="addAstore" className="btn btn-warning me-3" onClick= {resetStoreDetails} >Reset</button>
 
                     </div>
                 </div>

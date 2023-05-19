@@ -31,7 +31,7 @@ const StockReport = () => {
     try {
 
         let payload = {
-        storeId: roleName !== "SUPER ADMIN" ? storeId :storeIds,
+        storeId: roleName !== "SUPER ADMIN" ? storeId[0] :storeIds,
         vendorName,
         dateFrom,
         dateTo,

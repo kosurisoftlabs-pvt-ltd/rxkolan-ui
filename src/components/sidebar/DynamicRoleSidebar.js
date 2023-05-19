@@ -4,7 +4,7 @@ import useWindowDimensions from '../../constants/GetDimention'
 
 import './sidebar.css'
 
-const SuperAdminSidebar = () => {
+const DynamicRoleSidebar = () => {
   const [drawer, setDrawer] = useState(false)
   const [isOpenAmb, setIsOpenAmb] = useState(false);
   const [isOpenVendor, setIsOpenVendor] = useState(false);
@@ -17,7 +17,6 @@ const SuperAdminSidebar = () => {
   const [isOpenNurse, setIsOpenNurse] = useState(false);
   const [isOpenDiagnostic, setIsOpenDiagnostic] = useState(false);
   const [isOpenPurchase, setIsOpenPurchase] = useState(false)
-  const [isOpenTask, setIsOpenTask] = useState(false)
 
   const [isOpenAmb2, setIsOpenAmb2] = useState(false)
 
@@ -47,7 +46,6 @@ const SuperAdminSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-      setIsOpenTask(false)
 
   };
   // -------------------------------------------------------------submenu=-------------------------------
@@ -78,7 +76,6 @@ const SuperAdminSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-      setIsOpenTask(false)
   };
 
   const toggleStore = () => {
@@ -92,7 +89,6 @@ const SuperAdminSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-      setIsOpenTask(false)
   };
   const toggleTransaction = () => {
     setIsOpenTrasaction(!isOpenTransaction)
@@ -105,7 +101,6 @@ const SuperAdminSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-      setIsOpenTask(false)
   }
 
   const toggleStock = () => {
@@ -119,7 +114,6 @@ const SuperAdminSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-      setIsOpenTask(false)
   }
 
   const toggleRole = () => {
@@ -133,7 +127,6 @@ const SuperAdminSidebar = () => {
     setIsOpenLoyalty(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-      setIsOpenTask(false)
   }
   const toggleCustomer = () => {
     setIsOpenCustomer(!isOpenCustomer)
@@ -146,7 +139,6 @@ const SuperAdminSidebar = () => {
     setIsOpenLoyalty(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-      setIsOpenTask(false)
   }
 
   const toggleLoyalty = () => {
@@ -160,7 +152,6 @@ const SuperAdminSidebar = () => {
     setIsOpenTrasaction(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-      setIsOpenTask(false)
 
   }
   const toggleNurse = () => {
@@ -174,7 +165,6 @@ const SuperAdminSidebar = () => {
     setIsOpenStore(false)
     setIsOpenTrasaction(false)
     setIsOpenDiagnostic(false)
-      setIsOpenTask(false)
   }
 
   const toggleDiagnostic = () => {
@@ -189,21 +179,6 @@ const SuperAdminSidebar = () => {
     setIsOpenTrasaction(false)
     setIsOpenNurse(false)
   }
-
-  const toggleTask = ()=>{
-    setIsOpenAmb(false);
-    setIsOpenVendor(false)
-    setIsOpenStock(false)
-    setIsOpenCustomer(false)
-    setIsOpenStore(false)
-    setIsOpenTrasaction(false)
-    setIsOpenLoyalty(false)
-    setIsOpenRole(false)
-    setIsOpenNurse(false)
-    setIsOpenDiagnostic(false)
-      setIsOpenTask(true)
-  }
-
   const handleClickDashboard = ()=>{
     setIsOpenAmb(false);
     setIsOpenVendor(false)
@@ -215,7 +190,6 @@ const SuperAdminSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-      setIsOpenTask(false)
   }
 
   // -------------------------------------------------sub-menu---menu-----------------------------
@@ -247,7 +221,7 @@ const SuperAdminSidebar = () => {
 
           {/* <div className="collapsible-menu dashboard-menu">
             <span className='side-navb'>
-              <NavLink to={"/super-admin"}>DASHBOARD
+              <NavLink to={"/role/dynamicUser"}>DASHBOARD
 
               </NavLink>
             </span>
@@ -263,7 +237,7 @@ const SuperAdminSidebar = () => {
                   <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
                       <button class="accordion-button" type="button">
-                        <NavLink to={"/super-admin"}>DASHBOARD </NavLink>
+                        <NavLink to={"/role/dynamicUser"}>DASHBOARD </NavLink>
 
                       </button>
                     </h2>
@@ -284,16 +258,16 @@ const SuperAdminSidebar = () => {
                         <nav className='nav-open'>
                           <ul>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/add-ambulane"}>Add Ambulance</NavLink>
+                              <NavLink to={"/role/dynamicUser/add-ambulane"}>Add Ambulance</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/verify-ambulane"}>Verify Ambulance</NavLink>
+                              <NavLink to={"/role/dynamicUser/verify-ambulane"}>Verify Ambulance</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/update-ambulane"}>Update Ambulance</NavLink>
+                              <NavLink to={"/role/dynamicUser/update-ambulane"}>Update Ambulance</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/report-ambulane"}>Ambulance Report</NavLink>
+                              <NavLink to={"/role/dynamicUser/report-ambulane"}>Ambulance Report</NavLink>
                             </li>
                           </ul>
                         </nav>
@@ -314,11 +288,11 @@ const SuperAdminSidebar = () => {
                         <nav className='nav-open'>
                           <ul>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/add-ambulane"}>Add Vendor</NavLink>
+                              <NavLink to={"/role/dynamicUser/add-ambulane"}>Add Vendor</NavLink>
                             </li>
 
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/update-ambulane"}>Update Vendor</NavLink>
+                              <NavLink to={"/role/dynamicUser/update-ambulane"}>Update Vendor</NavLink>
                             </li>
 
                           </ul>
@@ -340,14 +314,14 @@ const SuperAdminSidebar = () => {
                         <nav className='nav-open'>
                           <ul>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/create-store"}>Create Store</NavLink>
+                              <NavLink to={"/role/dynamicUser/create-store"}>Create Store</NavLink>
                             </li>
 
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/update-store"}>Update Store</NavLink>
+                              <NavLink to={"/role/dynamicUser/update-store"}>Update Store</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/add-store-manager"}>Add Store Manager</NavLink>
+                              <NavLink to={"/role/dynamicUser/add-store-manager"}>Add Store Manager</NavLink>
                             </li>
                           </ul>
                         </nav>
@@ -367,25 +341,25 @@ const SuperAdminSidebar = () => {
                         <nav>
                           <ul>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/nursing/location"}>Location</NavLink>
+                              <NavLink to={"/role/dynamicUser/nursing/location"}>Location</NavLink>
                             </li>
 
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/nursing/profile"}>Profile</NavLink>
+                              <NavLink to={"/role/dynamicUser/nursing/profile"}>Profile</NavLink>
                             </li>
 
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/nursing/membership"}>Membership</NavLink>
+                              <NavLink to={"/role/dynamicUser/nursing/membership"}>Membership</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/nursing/service"}>My Service</NavLink>
+                              <NavLink to={"/role/dynamicUser/nursing/service"}>My Service</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/nursing/update/price"}>Update Price</NavLink>
+                              <NavLink to={"/role/dynamicUser/nursing/update/price"}>Update Price</NavLink>
                             </li>
 
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/nursing/update/package"}>Update Package</NavLink>
+                              <NavLink to={"/role/dynamicUser/nursing/update/package"}>Update Package</NavLink>
                             </li>
 
                           </ul>
@@ -407,25 +381,25 @@ const SuperAdminSidebar = () => {
                         <nav>
                           <ul>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/location"}>Location</NavLink>
+                              <NavLink to={"/role/dynamicUser/location"}>Location</NavLink>
                             </li>
 
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/profile"}>Profile</NavLink>
+                              <NavLink to={"/role/dynamicUser/profile"}>Profile</NavLink>
                             </li>
 
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/membership"}>Membership</NavLink>
+                              <NavLink to={"/role/dynamicUser/membership"}>Membership</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/service"}>My Service</NavLink>
+                              <NavLink to={"/role/dynamicUser/service"}>My Service</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/update/price"}>Update Price</NavLink>
+                              <NavLink to={"/role/dynamicUser/update/price"}>Update Price</NavLink>
                             </li>
 
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/update/package"}>Update Package</NavLink>
+                              <NavLink to={"/role/dynamicUser/update/package"}>Update Package</NavLink>
                             </li>
                           </ul>
                         </nav>
@@ -454,13 +428,13 @@ const SuperAdminSidebar = () => {
                                     <nav className='nav-open'>
                                       <ul>
                                         <li className='sum-menu'>
-                                          <NavLink to={"/super-admin/transaction/purchase/invoice"}>Purchase Invoice</NavLink>
+                                          <NavLink to={"/role/dynamicUser/transaction/purchase/invoice"}>Purchase Invoice</NavLink>
                                         </li>
                                         <li className='sum-menu'>
-                                          <NavLink to={"/super-admin/transaction/purchase/upload"}>Upload Purchase</NavLink>
+                                          <NavLink to={"/role/dynamicUser/transaction/purchase/upload"}>Upload Purchase</NavLink>
                                         </li>
                                         <li className='sum-menu'>
-                                          <NavLink to={"/super-admin/transaction/purchase/report"}>Purchase Report</NavLink>
+                                          <NavLink to={"/role/dynamicUser/transaction/purchase/report"}>Purchase Report</NavLink>
                                         </li>
 
                                       </ul>
@@ -478,13 +452,13 @@ const SuperAdminSidebar = () => {
 
 
                                         <li className='sum-menu'>
-                                          <NavLink to={"/super-admin/transaction/sales/invoice"}>Sales Invoice</NavLink>
+                                          <NavLink to={"/role/dynamicUser/transaction/sales/invoice"}>Sales Invoice</NavLink>
                                         </li>
                                         <li className='sum-menu'>
-                                          <NavLink to={"/super-admin/transaction/sales/upload"}>Upload Sales</NavLink>
+                                          <NavLink to={"/role/dynamicUser/transaction/sales/upload"}>Upload Sales</NavLink>
                                         </li>
                                         <li className='sum-menu'>
-                                          <NavLink to={"/super-admin/transaction/sales/report"}>Purchase Sales</NavLink>
+                                          <NavLink to={"/role/dynamicUser/transaction/sales/report"}>Purchase Sales</NavLink>
                                         </li>
 
                                       </ul>
@@ -493,30 +467,6 @@ const SuperAdminSidebar = () => {
                                 </div>
                               </div>
                             </li>
-                          </ul>
-                        </nav>
-                      </div>
-                    </div>
-                  </div>
-
-
-                       {/* ------------------------------------------------------------Task------------------------------- */}
-                       <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#taskCollapse" aria-expanded="true" aria-controls="taskCollapse">
-                        Task Management
-                      </button>
-                    </h2>
-                    <div id="taskCollapse" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                      <div class="accordion-body">
-                        <nav className='nav-open'>
-                          <ul>
-                            <li className='sum-menu'>
-                              <NavLink to={"/super-admin/add-task"}>Add Task</NavLink>
-                            </li>
-
-
-
                           </ul>
                         </nav>
                       </div>
@@ -534,11 +484,11 @@ const SuperAdminSidebar = () => {
                         <nav className='nav-open'>
                           <ul>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/upload-stock"}>Upload Stock</NavLink>
+                              <NavLink to={"/role/dynamicUser/upload-stock"}>Upload Stock</NavLink>
                             </li>
 
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/report-stock"}>Report Stock</NavLink>
+                              <NavLink to={"/role/dynamicUser/report-stock"}>Report Stock</NavLink>
                             </li>
 
                           </ul>
@@ -558,14 +508,14 @@ const SuperAdminSidebar = () => {
                         <nav className='nav-open'>
                           <ul>
                           <li className='sum-menu'>
-                              <NavLink to={"/super-admin/add-role-name"}>Add Role Name</NavLink>
+                              <NavLink to={"/role/dynamicUser/add-role-name"}>Add Role Name</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/add-role"}>Add Role</NavLink>
+                              <NavLink to={"/role/dynamicUser/add-role"}>Add Role</NavLink>
                             </li>
 
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/update-role"}>Update Role</NavLink>
+                              <NavLink to={"/role/dynamicUser/update-role"}>Update Role</NavLink>
                             </li>
 
                           </ul>
@@ -586,11 +536,11 @@ const SuperAdminSidebar = () => {
                         <nav className='nav-open'>
                           <ul>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/add-ambulane"}>Customer Enquiry</NavLink>
+                              <NavLink to={"/role/dynamicUser/add-ambulane"}>Customer Enquiry</NavLink>
                             </li>
 
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/update-ambulane"}>Item Master Management</NavLink>
+                              <NavLink to={"/role/dynamicUser/update-ambulane"}>Item Master Management</NavLink>
                             </li>
 
                           </ul>
@@ -610,7 +560,7 @@ const SuperAdminSidebar = () => {
                         <nav className='nav-open'>
                           <ul>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/loyalty/point"}>Loyalty Point Calculation</NavLink>
+                              <NavLink to={"/role/dynamicUser/loyalty/point"}>Loyalty Point Calculation</NavLink>
                             </li>
                           </ul>
                         </nav>
@@ -636,16 +586,16 @@ const SuperAdminSidebar = () => {
               <nav className='nav-open'>
                 <ul>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/add-ambulane"}>Add Ambulance</NavLink>
+                    <NavLink to={"/role/dynamicUser/add-ambulane"}>Add Ambulance</NavLink>
                   </li>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/verify-ambulane"}>Verify Ambulance</NavLink>
+                    <NavLink to={"/role/dynamicUser/verify-ambulane"}>Verify Ambulance</NavLink>
                   </li>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/update-ambulane"}>Update Ambulance</NavLink>
+                    <NavLink to={"/role/dynamicUser/update-ambulane"}>Update Ambulance</NavLink>
                   </li>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/report-ambulane"}>Ambulance Report</NavLink>
+                    <NavLink to={"/role/dynamicUser/report-ambulane"}>Ambulance Report</NavLink>
                   </li>
                 </ul>
               </nav>
@@ -665,11 +615,11 @@ const SuperAdminSidebar = () => {
               <nav className='nav-open'>
                 <ul>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/add-ambulane"}>Add Vendor</NavLink>
+                    <NavLink to={"/role/dynamicUser/add-ambulane"}>Add Vendor</NavLink>
                   </li>
 
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/update-ambulane"}>Update Vendor</NavLink>
+                    <NavLink to={"/role/dynamicUser/update-ambulane"}>Update Vendor</NavLink>
                   </li>
 
                 </ul>
@@ -686,14 +636,14 @@ const SuperAdminSidebar = () => {
               <nav className='nav-open'>
                 <ul>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/create-store"}>Create Store</NavLink>
+                    <NavLink to={"/role/dynamicUser/create-store"}>Create Store</NavLink>
                   </li>
 
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/update-store"}>Update Store</NavLink>
+                    <NavLink to={"/role/dynamicUser/update-store"}>Update Store</NavLink>
                   </li>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/add-store-manager"}>Add Store Manager</NavLink>
+                    <NavLink to={"/role/dynamicUser/add-store-manager"}>Add Store Manager</NavLink>
                   </li>
                 </ul>
               </nav>
@@ -711,25 +661,25 @@ const SuperAdminSidebar = () => {
               <nav>
                 <ul>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/nursing/location"}>Location</NavLink>
+                    <NavLink to={"/role/dynamicUser/nursing/location"}>Location</NavLink>
                   </li>
 
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/nursing/profile"}>Profile</NavLink>
+                    <NavLink to={"/role/dynamicUser/nursing/profile"}>Profile</NavLink>
                   </li>
 
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/nursing/membership"}>Membership</NavLink>
+                    <NavLink to={"/role/dynamicUser/nursing/membership"}>Membership</NavLink>
                   </li>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/nursing/service"}>My Service</NavLink>
+                    <NavLink to={"/role/dynamicUser/nursing/service"}>My Service</NavLink>
                   </li>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/nursing/update/price"}>Update Price</NavLink>
+                    <NavLink to={"/role/dynamicUser/nursing/update/price"}>Update Price</NavLink>
                   </li>
 
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/nursing/update/package"}>Update Package</NavLink>
+                    <NavLink to={"/role/dynamicUser/nursing/update/package"}>Update Package</NavLink>
                   </li>
 
                 </ul>
@@ -746,25 +696,25 @@ const SuperAdminSidebar = () => {
               <nav>
                 <ul>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/location"}>Location</NavLink>
+                    <NavLink to={"/role/dynamicUser/location"}>Location</NavLink>
                   </li>
 
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/profile"}>Profile</NavLink>
+                    <NavLink to={"/role/dynamicUser/profile"}>Profile</NavLink>
                   </li>
 
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/membership"}>Membership</NavLink>
+                    <NavLink to={"/role/dynamicUser/membership"}>Membership</NavLink>
                   </li>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/service"}>My Service</NavLink>
+                    <NavLink to={"/role/dynamicUser/service"}>My Service</NavLink>
                   </li>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/update/price"}>Update Price</NavLink>
+                    <NavLink to={"/role/dynamicUser/update/price"}>Update Price</NavLink>
                   </li>
 
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/update/package"}>Update Package</NavLink>
+                    <NavLink to={"/role/dynamicUser/update/package"}>Update Package</NavLink>
                   </li>
                 </ul>
               </nav>
@@ -791,13 +741,13 @@ const SuperAdminSidebar = () => {
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                           <div class="accordion-body">
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/transaction/purchase/invoice"}>Purchase Invoice</NavLink>
+                              <NavLink to={"/role/dynamicUser/transaction/purchase/invoice"}>Purchase Invoice</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/transaction/purchase/upload"}>Upload Purchase</NavLink>
+                              <NavLink to={"/role/dynamicUser/transaction/purchase/upload"}>Upload Purchase</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/transaction/purchase/report"}>Purchase Report</NavLink>
+                              <NavLink to={"/role/dynamicUser/transaction/purchase/report"}>Purchase Report</NavLink>
                             </li>
                           </div>
                         </div>
@@ -811,13 +761,13 @@ const SuperAdminSidebar = () => {
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                           <div class="accordion-body">
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/transaction/sales/invoice"}>Sales Invoice</NavLink>
+                              <NavLink to={"/role/dynamicUser/transaction/sales/invoice"}>Sales Invoice</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/transaction/sales/upload"}>Upload Sales</NavLink>
+                              <NavLink to={"/role/dynamicUser/transaction/sales/upload"}>Upload Sales</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/transaction/sales/report"}>Purchase Sales</NavLink>
+                              <NavLink to={"/role/dynamicUser/transaction/sales/report"}>Purchase Sales</NavLink>
                             </li>
                           </div>
                         </div>
@@ -843,11 +793,11 @@ const SuperAdminSidebar = () => {
               <nav className='nav-open'>
                 <ul>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/upload-stock"}>Upload Stock</NavLink>
+                    <NavLink to={"/role/dynamicUser/upload-stock"}>Upload Stock</NavLink>
                   </li>
 
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/report-stock"}>Report Stock</NavLink>
+                    <NavLink to={"/role/dynamicUser/report-stock"}>Report Stock</NavLink>
                   </li>
 
                 </ul>
@@ -868,11 +818,11 @@ const SuperAdminSidebar = () => {
               <nav className='nav-open'>
                 <ul>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/add-role"}>Add Role</NavLink>
+                    <NavLink to={"/role/dynamicUser/add-role"}>Add Role</NavLink>
                   </li>
 
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/update-role"}>Update Role</NavLink>
+                    <NavLink to={"/role/dynamicUser/update-role"}>Update Role</NavLink>
                   </li>
 
                 </ul>
@@ -893,11 +843,11 @@ const SuperAdminSidebar = () => {
               <nav className='nav-open'>
                 <ul>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/add-ambulane"}>Customer Enquiry</NavLink>
+                    <NavLink to={"/role/dynamicUser/add-ambulane"}>Customer Enquiry</NavLink>
                   </li>
 
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/update-ambulane"}>Item Master Management</NavLink>
+                    <NavLink to={"/role/dynamicUser/update-ambulane"}>Item Master Management</NavLink>
                   </li>
 
                 </ul>
@@ -916,7 +866,7 @@ const SuperAdminSidebar = () => {
               <nav className='nav-open'>
                 <ul>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/loyalty/point"}>Loyalty Point Calculation</NavLink>
+                    <NavLink to={"/role/dynamicUser/loyalty/point"}>Loyalty Point Calculation</NavLink>
                   </li>
                 </ul>
               </nav>
@@ -945,7 +895,7 @@ const SuperAdminSidebar = () => {
 
           <div className="collapsible-menu" >
             <span className='side-navb' onClick={handleClickDashboard}>
-              <NavLink to={"/super-admin"}>
+              <NavLink to={"/role/dynamicUser"}>
                 <i class="fa-solid fa-house"></i>
               </NavLink>
             </span>
@@ -959,16 +909,16 @@ const SuperAdminSidebar = () => {
               <nav className='nav-closed'>
                 <ul>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/add-ambulane"}>Add Ambulance</NavLink>
+                    <NavLink to={"/role/dynamicUser/add-ambulane"}>Add Ambulance</NavLink>
                   </li>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/verify-ambulane"}>Verify Ambulance</NavLink>
+                    <NavLink to={"/role/dynamicUser/verify-ambulane"}>Verify Ambulance</NavLink>
                   </li>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/update-ambulane"}>Update Ambulance</NavLink>
+                    <NavLink to={"/role/dynamicUser/update-ambulane"}>Update Ambulance</NavLink>
                   </li>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/report-ambulane"}>Ambulance Report</NavLink>
+                    <NavLink to={"/role/dynamicUser/report-ambulane"}>Ambulance Report</NavLink>
                   </li>
                 </ul>
               </nav>
@@ -984,11 +934,11 @@ const SuperAdminSidebar = () => {
               <nav className='nav-closed'>
                 <ul>
                   <li className='sum-menu' onClick={toggleVendor}>
-                    <NavLink to={"/super-admin/add-ambulane"}>Add Vendor</NavLink>
+                    <NavLink to={"/role/dynamicUser/add-ambulane"}>Add Vendor</NavLink>
                   </li>
 
                   <li className='sum-menu' onClick={toggleVendor}>
-                    <NavLink to={"/super-admin/update-ambulane"}>Update Vendor</NavLink>
+                    <NavLink to={"/role/dynamicUser/update-ambulane"}>Update Vendor</NavLink>
                   </li>
 
                 </ul>
@@ -1008,14 +958,14 @@ const SuperAdminSidebar = () => {
               <nav className='nav-closed'>
                 <ul  onClick={toggleStore}>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/create-store"}>Create Store</NavLink>
+                    <NavLink to={"/role/dynamicUser/create-store"}>Create Store</NavLink>
                   </li>
 
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/update-store"}>Update Store</NavLink>
+                    <NavLink to={"/role/dynamicUser/update-store"}>Update Store</NavLink>
                   </li>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/add-store-manager"}>Add Store Manager</NavLink>
+                    <NavLink to={"/role/dynamicUser/add-store-manager"}>Add Store Manager</NavLink>
                   </li>
                 </ul>
               </nav>
@@ -1033,11 +983,11 @@ const SuperAdminSidebar = () => {
                     setDrawer(!drawer)
                 }}>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/transaction/purchase/upload"}>Purchase Management</NavLink>
+                    <NavLink to={"/role/dynamicUser/transaction/purchase/upload"}>Purchase Management</NavLink>
                   </li>
 
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/transaction/sales/upload"}>Sales Management</NavLink>
+                    <NavLink to={"/role/dynamicUser/transaction/sales/upload"}>Sales Management</NavLink>
                   </li>
 
                 </ul>
@@ -1052,11 +1002,11 @@ const SuperAdminSidebar = () => {
               <nav className='nav-closed'>
                 <ul onClick={toggleStock}>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/upload-stock"}>Upload Stock</NavLink>
+                    <NavLink to={"/role/dynamicUser/upload-stock"}>Upload Stock</NavLink>
                   </li>
 
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/report-stock"}>Report Stock</NavLink>
+                    <NavLink to={"/role/dynamicUser/report-stock"}>Report Stock</NavLink>
                   </li>
 
                 </ul>
@@ -1071,35 +1021,17 @@ const SuperAdminSidebar = () => {
               <nav className='nav-closed'>
                 <ul onClick={toggleRole}>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/add-role"}>Add Role</NavLink>
+                    <NavLink to={"/role/dynamicUser/add-role"}>Add Role</NavLink>
                   </li>
                   {/* <br/> */}
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/update-role"}>Update Role</NavLink>
+                    <NavLink to={"/role/dynamicUser/update-role"}>Update Role</NavLink>
                   </li>
 
                 </ul>
               </nav>
             )}
           </div>
-
-          <div className="collapsible-menu">
-            <span className='side-navb' onClick={toggleTask}>
-              <i class="fa-solid fa-user-tag"></i>
-            </span>
-            {isOpenTask && (
-              <nav className='nav-closed'>
-                <ul onClick={toggleTask}>
-                  <li className='sum-menu'>
-                    <NavLink to={"/super-admin/add-task"}>Add Task</NavLink>
-                  </li>
-
-
-                </ul>
-              </nav>
-            )}
-          </div>
-
           <div className="collapsible-menu">
             <span className='side-navb' onClick={toggleCustomer}>
               <i class="fa-solid fa-users"></i>
@@ -1108,11 +1040,11 @@ const SuperAdminSidebar = () => {
               <nav className='nav-closed'>
                 <ul>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/add-ambulane"}>Customer Enquiry</NavLink>
+                    <NavLink to={"/role/dynamicUser/add-ambulane"}>Customer Enquiry</NavLink>
                   </li>
 
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/update-ambulane"}>Item Master Management</NavLink>
+                    <NavLink to={"/role/dynamicUser/update-ambulane"}>Item Master Management</NavLink>
                   </li>
 
                 </ul>
@@ -1127,7 +1059,7 @@ const SuperAdminSidebar = () => {
               <nav className='nav-closed'>
                 <ul onClick={toggleLoyalty}>
                   <li className='sum-menu'>
-                    <NavLink to={"/super-admin/loyalty/point"}>Loyalty Point Calculation</NavLink>
+                    <NavLink to={"/role/dynamicUser/loyalty/point"}>Loyalty Point Calculation</NavLink>
                   </li>
                 </ul>
               </nav>
@@ -1135,7 +1067,7 @@ const SuperAdminSidebar = () => {
           </div>
 
           {/* <NavLink className="side-nav-T" to={"/ambulance/management"}><i class="fa-solid fa-truck-medical"></i></NavLink> */}
-          {/* <NavLink className="side-nav-T " to={"/super-admin"}><i class="fa-solid fa-house"></i></NavLink> */}
+          {/* <NavLink className="side-nav-T " to={"/role/dynamicUser"}><i class="fa-solid fa-house"></i></NavLink> */}
 
 
           {/* <NavLink className="side-nav-T" to={"/vendor/management"}><i class="fa-solid fa-list"></i></NavLink> */}
@@ -1162,4 +1094,4 @@ const SuperAdminSidebar = () => {
   )
 }
 
-export default SuperAdminSidebar
+export default DynamicRoleSidebar

@@ -25,7 +25,7 @@ const UploadPurchase = () => {
 
     e.preventDefault()
 
-    console.log("purchase", store_id, file.name)
+    console.log("purchase", store_id, file)
 
 
         if (store_id === "" || file === "") {
@@ -54,12 +54,17 @@ const UploadPurchase = () => {
           toast.success('Uploaded Successfully')
             setFile(null)
             // setStore_ID("")
+            setTimeout(()=>{
+
+              window.location.reload();
+            },2000)
         } else {
             console.log("Upload Error")
         }
     } catch (error) {
       console.log(error)
-      toast.error('Error')
+      toast.error(error.response.data.responseMessage)
+
 
     }
 

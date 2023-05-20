@@ -15,8 +15,7 @@
 
 .search-field-value,
 .loyalty-search {
-    margin: 10px;
-    min-width: 16rem;
+    margin: 5px;
 }
 
 .loyalty-search input {

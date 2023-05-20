@@ -97,8 +97,7 @@ const Report = () => {
 
 
                     <div className="filter_item">
-                        <label for="" className="pt15 text-center">Action</label>
-                        <input type="button" className="form-control search-control bg_self btn-success" value={'Search'} onClick={handleSearchReport}/>
+                        <input type="button" className="form-control search-control bg_self btn-success" style={{marginTop:'34px'}}  value={'Search'} onClick={handleSearchReport}/>
                     </div>
                 </div>
             </form>

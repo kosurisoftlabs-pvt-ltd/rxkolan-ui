@@ -484,7 +484,7 @@ const SuperAdminSidebar = () => {
                                           <NavLink to={"/super-admin/transaction/sales/upload"}>Upload Sales</NavLink>
                                         </li>
                                         <li className='sum-menu'>
-                                          <NavLink to={"/super-admin/transaction/sales/report"}>Purchase Sales</NavLink>
+                                          <NavLink to={"/super-admin/transaction/sales/report"}>Sales Report</NavLink>
                                         </li>
 
                                       </ul>
@@ -817,7 +817,7 @@ const SuperAdminSidebar = () => {
                               <NavLink to={"/super-admin/transaction/sales/upload"}>Upload Sales</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/super-admin/transaction/sales/report"}>Purchase Sales</NavLink>
+                              <NavLink to={"/super-admin/transaction/sales/report"}>Sales Report</NavLink>
                             </li>
                           </div>
                         </div>

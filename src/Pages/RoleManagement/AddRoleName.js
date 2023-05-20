@@ -104,7 +104,7 @@ const [getAllRoles] = useLazyGetAllRolesQuery()
                         <div class=" d-flex">
                         <div className='role-input'>
                             <label>Role ID</label><br />
-                            <input type={"number"} id={'roleId_key' +index } value={roleList[index].roleId} onChange={(e)=>handleRowIdChange(e,index)} />
+                            <input type={"text"} id={'roleId_key' +index } value={roleList[index].roleId} onChange={(e)=>handleRowIdChange(e,index)} />
                         </div>
                         <div className='role-input'>
                             <label>Role Name</label><br />

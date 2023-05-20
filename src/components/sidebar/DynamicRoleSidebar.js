@@ -458,7 +458,7 @@ const DynamicRoleSidebar = () => {
                                           <NavLink to={"/role/dynamicUser/transaction/sales/upload"}>Upload Sales</NavLink>
                                         </li>
                                         <li className='sum-menu'>
-                                          <NavLink to={"/role/dynamicUser/transaction/sales/report"}>Purchase Sales</NavLink>
+                                          <NavLink to={"/role/dynamicUser/transaction/sales/report"}>Sales Report</NavLink>
                                         </li>
 
                                       </ul>
@@ -767,7 +767,7 @@ const DynamicRoleSidebar = () => {
                               <NavLink to={"/role/dynamicUser/transaction/sales/upload"}>Upload Sales</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/role/dynamicUser/transaction/sales/report"}>Purchase Sales</NavLink>
+                              <NavLink to={"/role/dynamicUser/transaction/sales/report"}>Sales Report</NavLink>
                             </li>
                           </div>
                         </div>

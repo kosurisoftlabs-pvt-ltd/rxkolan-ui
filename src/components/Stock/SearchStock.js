@@ -33,7 +33,6 @@ const SearchStock = () => {
                         <input type="text" className="form-control search-control" placeholder="Store Id" />
                     </div>
                     <div className="filter_item">
-                        <label for="" className="pt15 text-center">Action</label>
                         <input type="submit" className="form-control search-control bg_self btn-success" value="Search" onclick="return confirm('Are you confirm?');" />
                     </div>
                 </div>

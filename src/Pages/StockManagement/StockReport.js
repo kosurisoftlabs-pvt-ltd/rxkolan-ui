@@ -74,7 +74,7 @@ const StockReport = () => {
                         <label for="" className="text-center">Date To</label>
                         <input type="date" className="form-control search-control"  value={dateTo} onChange={(e)=>{setDateTo(e.target.value)}}/>
                     </div>
-                    <div className="filter_item">
+                    <div className="filter_item" >
                         <label for="" className="text-center">Product Type</label>
                         <select name="" id="" className="form-control search-control" value={productType} onChange={(e)=>{setProductType(e.target.value)}}>
                             <option value="">Select..</option>
@@ -102,8 +102,7 @@ const StockReport = () => {
 
 
                     <div className="filter_item">
-                        <label for="" className="pt15 text-center">Action</label>
-                        <input type="button" className="form-control search-control bg_self btn-success" value={'Search'} onClick={handleSearchStock}/>
+                        <input type="button" className="form-control search-control bg_self btn-success" style={{marginTop:'34px'}}  value={'Search'} onClick={handleSearchStock}/>
                     </div>
                 </div>
             </form>

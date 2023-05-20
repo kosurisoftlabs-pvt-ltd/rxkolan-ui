@@ -446,7 +446,7 @@ const Sidebar = () => {
                                           <NavLink to={"/admin/transaction/sales/upload"}>Upload Sales</NavLink>
                                         </li>
                                         <li className='sum-menu'>
-                                          <NavLink to={"/admin/transaction/sales/report"}>Purchase Sales</NavLink>
+                                          <NavLink to={"/admin/transaction/sales/report"}>Sales Report</NavLink>
                                         </li>
 
                                       </ul>
@@ -755,7 +755,7 @@ const Sidebar = () => {
                               <NavLink to={"/admin/transaction/sales/upload"}>Upload Sales</NavLink>
                             </li>
                             <li className='sum-menu'>
-                              <NavLink to={"/admin/transaction/sales/report"}>Purchase Sales</NavLink>
+                              <NavLink to={"/admin/transaction/sales/report"}>Sales Report</NavLink>
                             </li>
                           </div>
                         </div>

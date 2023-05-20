@@ -7,7 +7,7 @@ const Table = (props) => {
   return (
     <div className="search-table">
         <div className="search-heading">
-            <h1>SEARCH RESULT</h1>
+            <h1>Available Medicine</h1>
         </div>
       <table className="table-container">
         <tr>

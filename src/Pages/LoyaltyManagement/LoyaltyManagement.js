@@ -133,7 +133,7 @@ const LoyaltyManagement = () => {
                                 </div> */}
                                 <div className='search-field-value loyalty-search'>
                                     <br />
-                                    <Button name={"Search"} color={"#3bad55"} onClick={ConfigureLoyaltyPoint}  />
+                                    <Button name={"Submit"} color={"#3bad55"} onClick={ConfigureLoyaltyPoint}  />
 
                                 </div>
 

@@ -422,7 +422,7 @@ const ManagerSidebar = () => {
                                           <NavLink to={"/storemanager/transaction/sales/upload"}>Upload Sales</NavLink>
                                         </li>
                                         <li className='sum-menu'>
-                                          <NavLink to={"/storemanager/transaction/sales/report"}>Purchase Sales</NavLink>
+                                          <NavLink to={"/storemanager/transaction/sales/report"}>Sales Report</NavLink>
                                         </li>
 
                                       </ul>

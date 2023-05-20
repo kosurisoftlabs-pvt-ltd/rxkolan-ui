@@ -1,8 +1,7 @@
 .ambulance-container {
     width: 100%;
     background-color: #f0f2fa;
-    max-height: 89vh;
-    min-height: 89vh;
+    max-height: 87vh;
     overflow: auto;
     font-size: 14px;
 }

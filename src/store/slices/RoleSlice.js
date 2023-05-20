@@ -6,7 +6,8 @@ const initialState = {
   roleList:[],
   taskList:[],
   roleTaskList:[],
-  roleTaskListIds:[]
+  roleTaskListIds:[],
+  dynamicTaskList:[]
 
 };
 
@@ -25,6 +26,8 @@ const RoleSlice = createSlice({
     builder.addMatcher(endpoints.getTaskToRole.matchFulfilled, (state, action) => {
       state.roleTaskList = action?.payload?.taskList;
       state.roleTaskListIds = action?.payload?.taskList.map(item=>item.taskId)
+      state.dynamicTaskList = action?.payload?.taskList.map(item=>item.taskId)
+
     });
   },
 

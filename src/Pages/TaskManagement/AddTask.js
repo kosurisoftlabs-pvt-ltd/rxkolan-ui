@@ -104,7 +104,7 @@ const [getAllTasks] = useLazyGetAllTasksQuery()
                         <div class=" d-flex">
                         <div className='role-input'>
                             <label>Task ID</label><br />
-                            <input type={"text"} id={'taskId_key' +index } value={taskList[index].taskId} onChange={(e)=>handleRowIdChange(e,index)} />
+                            <input type={"number"} id={'taskId_key' +index } value={taskList[index].taskId} onChange={(e)=>handleRowIdChange(e,index)} />
                         </div>
                         <div className='role-input'>
                             <label>Task Name</label><br />

@@ -66,12 +66,17 @@ import { useEffect } from 'react';
 import DynamicLayout from './Layout/DynamicLayout/DynamicLayout';
 import DynamicDashboard from './Pages/DasboardPage/DynamicDashboard';
 import AddTask from './Pages/TaskManagement/AddTask';
-import { useLazyGetAllRolesQuery, useLazyGetAllTasksQuery } from './services/apis/RoleService';
+import { useGetTaskToRoleMutation, useLazyGetAllRolesQuery, useLazyGetAllTasksQuery } from './services/apis/RoleService';
 
 
 function App() {
 
   let  { roleName } = useSelector((state) => state.auth);
+  const [getTaskToRole] = useGetTaskToRoleMutation()
+  let  { roleId } = useSelector((state) => state.auth);
+  useEffect(() => {
+      if(roleId) getTaskToRole({"roleId":roleId})
+  }, [roleId])
   // let roleName = "SUPER ADMIN"
 
   const [getAllStores] = useLazyGetAllStoresQuery()

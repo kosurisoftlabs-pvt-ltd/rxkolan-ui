@@ -1,10 +1,13 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 // import Title from './components/Ambulance/AddForm'
 import '../../Pages/DasboardPage/dashboard.css'
 import '../../Pages/AmbulanceManagement/style.css'
 import Header from '../../components/headers/DashboardHeader'
 import DynamicRoleSidebar from '../../components/sidebar/DynamicRoleSidebar'
+
+
 const DynamicLayout = ({ children }) => {
+ ;
 
     return (
         <div className='dashboard-design'>

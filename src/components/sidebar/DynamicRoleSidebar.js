@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink } from "react-router-dom";
 import useWindowDimensions from '../../constants/GetDimention'
+import { useSelector } from 'react-redux';
 
 import './sidebar.css'
 
@@ -26,6 +27,8 @@ const DynamicRoleSidebar = () => {
     (dimension ? setDrawer(true) : setDrawer(false))
 
   }, [dimension])
+
+  let  { dynamicTaskList } = useSelector((state) => state.role);
 
   // ----------------------store state in localstorage----------------------------------
   // localStorage.setItem("isOpen", JSON.stringify(false))
@@ -420,10 +423,10 @@ const DynamicRoleSidebar = () => {
                             <li className='sum-menu'>
                               <div class="accordion" id="accordionExample">
                                 <div className="collapsible-menu">
-                                  <span className='side-navb' onClick={togglePurchase}>Purchase Management
+                               { dynamicTaskList.includes(2102) &&  <span className='side-navb' onClick={togglePurchase}>Purchase Management
                                     {!isOpenPurchase && <i class="collapseIcon cPointer fas fa-angle-down"></i>}
                                     {isOpenPurchase && <i class="collapseIcon cPointer fas fa-angle-up"></i>}
-                                  </span>
+                                  </span>}
                                   {isOpenPurchase && (
                                     <nav className='nav-open'>
                                       <ul>

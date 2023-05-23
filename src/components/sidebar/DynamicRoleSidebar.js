@@ -30,6 +30,8 @@ const DynamicRoleSidebar = () => {
 
   let  { dynamicTaskList } = useSelector((state) => state.role);
 
+  console.log(dynamicTaskList,'DL')
+
   // ----------------------store state in localstorage----------------------------------
   // localStorage.setItem("isOpen", JSON.stringify(false))
 
@@ -195,6 +197,8 @@ const DynamicRoleSidebar = () => {
     setIsOpenDiagnostic(false)
   }
 
+
+  console.log(dynamicTaskList.includes(2202),'22')
   // -------------------------------------------------sub-menu---menu-----------------------------
   const togglePurchase = () => {
     setIsOpenPurchase(!isOpenPurchase)
@@ -251,27 +255,27 @@ const DynamicRoleSidebar = () => {
                   {/* ---------------------------Ambulance-------------------------------------------------------- */}
 
                   <div className="accordion-item">
-                    <h2 className="accordion-header" id="headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  {dynamicTaskList.includes(5000) &&  <h2 className="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Ambulance Management
                       </button>
-                    </h2>
+                    </h2>}
                     <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <div className="accordion-body">
                         <nav className='nav-open'>
                           <ul>
-                            <li className='sum-menu'>
+                           {dynamicTaskList.includes(5001) &&  <li className='sum-menu'>
                               <NavLink to={"/role/dynamicUser/add-ambulane"}>Add Ambulance</NavLink>
-                            </li>
-                            <li className='sum-menu'>
+                            </li>}
+                          {dynamicTaskList.includes(5002) &&   <li className='sum-menu'>
                               <NavLink to={"/role/dynamicUser/verify-ambulane"}>Verify Ambulance</NavLink>
-                            </li>
-                            <li className='sum-menu'>
+                            </li>}
+                          {dynamicTaskList.includes(5003) &&   <li className='sum-menu'>
                               <NavLink to={"/role/dynamicUser/update-ambulane"}>Update Ambulance</NavLink>
-                            </li>
-                            <li className='sum-menu'>
+                            </li>}
+                      {dynamicTaskList.includes(5004) &&       <li className='sum-menu'>
                               <NavLink to={"/role/dynamicUser/report-ambulane"}>Ambulance Report</NavLink>
-                            </li>
+                            </li>}
                           </ul>
                         </nav>
                       </div>
@@ -307,25 +311,25 @@ const DynamicRoleSidebar = () => {
 
                   {/* -----------------------------------------Store-------------------------------------------- */}
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                {   dynamicTaskList.includes(1000) &&   <h2 class="accordion-header" id="headingOne">
+                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                         Store Master
                       </button>
-                    </h2>
+                    </h2>}
                     <div id="collapseThree" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
                         <nav className='nav-open'>
                           <ul>
-                            <li className='sum-menu'>
+                           {dynamicTaskList.includes(1001) &&  <li className='sum-menu'>
                               <NavLink to={"/role/dynamicUser/create-store"}>Create Store</NavLink>
-                            </li>
+                            </li>}
 
-                            <li className='sum-menu'>
+                          {  dynamicTaskList.includes(1002) && <li className='sum-menu'>
                               <NavLink to={"/role/dynamicUser/update-store"}>Update Store</NavLink>
-                            </li>
-                            <li className='sum-menu'>
+                            </li>}
+                     {dynamicTaskList.includes(1003) &&        <li className='sum-menu'>
                               <NavLink to={"/role/dynamicUser/add-store-manager"}>Add Store Manager</NavLink>
-                            </li>
+                            </li>}
                           </ul>
                         </nav>
                       </div>
@@ -374,11 +378,11 @@ const DynamicRoleSidebar = () => {
                   {/* ------------------------------------------------------------Diagnostice------------------------------------------- */}
 
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifth" aria-expanded="true" aria-controls="collapseFifth">
+                  {  dynamicTaskList.includes(6000) &&  <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifth" aria-expanded="true" aria-controls="collapseFifth">
                         Diagnostic Management
                       </button>
-                    </h2>
+                    </h2>}
                     <div id="collapseFifth" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
                         <nav>
@@ -411,11 +415,12 @@ const DynamicRoleSidebar = () => {
                   </div>
                   {/* ------------------------------------------------------------Transaction------------------------------- */}
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTransaction" aria-expanded="true" aria-controls="collapseTransaction">
+                  {   (dynamicTaskList.includes(2000)) &&   <h2 class="accordion-header" id="headingOne">
+                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTransaction" aria-expanded="true" aria-controls="collapseTransaction">
                         Transaction Management
                       </button>
-                    </h2>
+
+                    </h2>}
                     <div id="collapseTransaction" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
                         <nav className='nav-open'>
@@ -423,46 +428,46 @@ const DynamicRoleSidebar = () => {
                             <li className='sum-menu'>
                               <div class="accordion" id="accordionExample">
                                 <div className="collapsible-menu">
-                               { dynamicTaskList.includes(2102) &&  <span className='side-navb' onClick={togglePurchase}>Purchase Management
+                            <span className='side-navb' onClick={togglePurchase}>Purchase Management
                                     {!isOpenPurchase && <i class="collapseIcon cPointer fas fa-angle-down"></i>}
                                     {isOpenPurchase && <i class="collapseIcon cPointer fas fa-angle-up"></i>}
-                                  </span>}
+                                  </span>
                                   {isOpenPurchase && (
                                     <nav className='nav-open'>
                                       <ul>
-                                        <li className='sum-menu'>
+                                       <li className='sum-menu'>
                                           <NavLink to={"/role/dynamicUser/transaction/purchase/invoice"}>Purchase Invoice</NavLink>
                                         </li>
-                                        <li className='sum-menu'>
+                                      {dynamicTaskList.includes(2102) &&   <li className='sum-menu'>
                                           <NavLink to={"/role/dynamicUser/transaction/purchase/upload"}>Upload Purchase</NavLink>
-                                        </li>
-                                        <li className='sum-menu'>
+                                        </li>}
+                                     {dynamicTaskList.includes(2103) &&    <li className='sum-menu'>
                                           <NavLink to={"/role/dynamicUser/transaction/purchase/report"}>Purchase Report</NavLink>
-                                        </li>
+                                        </li>}
 
                                       </ul>
                                     </nav>
                                   )}
                                 </div>
                                 <div className="collapsible-menu">
-                                  <span className='side-navb' onClick={toggleStock}>Sales Management
+                           {dynamicTaskList.includes(2201) &&        <span className='side-navb' onClick={toggleStock}>Sales Management
                                     {!isOpenStock && <i class="collapseIcon cPointer fas fa-angle-down"></i>}
                                     {isOpenStock && <i class="collapseIcon cPointer fas fa-angle-up"></i>}
-                                  </span>
+                                  </span>}
                                   {isOpenStock && (
                                     <nav className='nav-open'>
                                       <ul>
 
 
-                                        <li className='sum-menu'>
+                                     {dynamicTaskList.includes(2202) &&    <li className='sum-menu'>
                                           <NavLink to={"/role/dynamicUser/transaction/sales/invoice"}>Sales Invoice</NavLink>
-                                        </li>
-                                        <li className='sum-menu'>
+                                        </li>}
+                                      {dynamicTaskList.includes(2202) &&   <li className='sum-menu'>
                                           <NavLink to={"/role/dynamicUser/transaction/sales/upload"}>Upload Sales</NavLink>
-                                        </li>
-                                        <li className='sum-menu'>
+                                        </li>}
+                                    {   dynamicTaskList.includes(2203) &&  <li className='sum-menu'>
                                           <NavLink to={"/role/dynamicUser/transaction/sales/report"}>Sales Report</NavLink>
-                                        </li>
+                                        </li>}
 
                                       </ul>
                                     </nav>
@@ -477,22 +482,23 @@ const DynamicRoleSidebar = () => {
                   </div>
                   {/* ----------------------------------------------------------- Stock-------------------------------- */}
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSixth" aria-expanded="true" aria-controls="collapseSixth">
+                  { dynamicTaskList.includes(4000) &&   <h2 class="accordion-header" id="headingOne">
+                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSixth" aria-expanded="true" aria-controls="collapseSixth">
                         Stock Management
                       </button>
-                    </h2>
+
+                    </h2>}
                     <div id="collapseSixth" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
                         <nav className='nav-open'>
                           <ul>
-                            <li className='sum-menu'>
+                       {dynamicTaskList.includes(4102) &&      <li className='sum-menu'>
                               <NavLink to={"/role/dynamicUser/upload-stock"}>Upload Stock</NavLink>
-                            </li>
+                            </li>}
 
-                            <li className='sum-menu'>
+                        { dynamicTaskList.includes(4101) &&    <li className='sum-menu'>
                               <NavLink to={"/role/dynamicUser/report-stock"}>Report Stock</NavLink>
-                            </li>
+                            </li>}
 
                           </ul>
                         </nav>
@@ -501,26 +507,26 @@ const DynamicRoleSidebar = () => {
                   </div>
                   {/* --------------------------------------------------------- Role------------------------------------ */}
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeventh" aria-expanded="true" aria-controls="collapseSeventh">
+                  { dynamicTaskList.includes(8000) &&    <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeventh" aria-expanded="true" aria-controls="collapseSeventh">
                         Role Management
                       </button>
-                    </h2>
+                    </h2>}
                     <div id="collapseSeventh" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <div class="accordion-body">
                         <nav className='nav-open'>
                           <ul>
-                          <li className='sum-menu'>
+                       {dynamicTaskList.includes(8003) &&    <li className='sum-menu'>
                               <NavLink to={"/role/dynamicUser/add-role-name"}>Add Role Name</NavLink>
-                            </li>
-                            <li className='sum-menu'>
+                            </li>}
+                        {dynamicTaskList.includes(8003) &&     <li className='sum-menu'>
                               <NavLink to={"/role/dynamicUser/add-role"}>Add Role</NavLink>
-                            </li>
+                            </li>}
 
-                            <li className='sum-menu'>
+                        {dynamicTaskList.includes(8004) &&     <li className='sum-menu'>
                               <NavLink to={"/role/dynamicUser/update-role"}>Update Role</NavLink>
                             </li>
-
+}
                           </ul>
                         </nav>
                       </div>
@@ -528,9 +534,11 @@ const DynamicRoleSidebar = () => {
                   </div>
                   {/* ------------------------------------------------------Customer--------------------------------- */}
 
+                {
+                  dynamicTaskList.includes(3000) &&
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
                         Customer Management
                       </button>
                     </h2>
@@ -550,9 +558,9 @@ const DynamicRoleSidebar = () => {
                         </nav>
                       </div>
                     </div>
-                  </div>
+                  </div>}
                   {/* ------------------------------------------------------Loyalty------------------------------ */}
-                  <div class="accordion-item">
+             {dynamicTaskList.includes(2201) &&      <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
                       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
                         Loyalty Management
@@ -563,13 +571,13 @@ const DynamicRoleSidebar = () => {
                         <nav className='nav-open'>
                           <ul>
                             <li className='sum-menu'>
-                              <NavLink to={"/role/dynamicUser/loyalty/point"}>Loyalty Point Calculation</NavLink>
+                              <NavLink to={"/role/dynamicUser/loyalty/point"}>Loyalty Points Calculation</NavLink>
                             </li>
                           </ul>
                         </nav>
                       </div>
                     </div>
-                  </div>
+                  </div>}
 
                 </div>
               </li>
@@ -1069,26 +1077,7 @@ const DynamicRoleSidebar = () => {
             )}
           </div>
 
-          {/* <NavLink className="side-nav-T" to={"/ambulance/management"}><i class="fa-solid fa-truck-medical"></i></NavLink> */}
-          {/* <NavLink className="side-nav-T " to={"/role/dynamicUser"}><i class="fa-solid fa-house"></i></NavLink> */}
 
-
-          {/* <NavLink className="side-nav-T" to={"/vendor/management"}><i class="fa-solid fa-list"></i></NavLink> */}
-          {/* <NavLink className="side-nav-T" to={"/store/master"}><i class="fa-solid fa-store"></i></NavLink> */}
-          {/* <NavLink className="side-nav-T" to={"/transaction/management"}><i class="fa-solid fa-exchange-alt"></i></NavLink> */}
-
-
-          {/* <NavLink className="side-nav-T" to={"/stock/management"}><i class="fa-solid fa-warehouse"></i></NavLink> */}
-          {/* <NavLink className="side-nav-T" to={"/role/management"}><i class="fa-solid fa-user-tag"></i></NavLink> */}
-          {/* <NavLink className="side-nav-T" to={"/customer/management"}><i class="fa-solid fa-users"></i></NavLink> */}
-
-          {/* <NavLink className="side-nav-T" to={"/loyalty/management"}><i class="fa-solid fa-fingerprint"></i></NavLink> */}
-
-
-
-
-
-          {/* </div> */}
 
         </div>
     }</>

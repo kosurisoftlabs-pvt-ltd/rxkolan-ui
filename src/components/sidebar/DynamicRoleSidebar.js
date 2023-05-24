@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { NavLink } from "react-router-dom";
 import useWindowDimensions from '../../constants/GetDimention'
 import { useSelector } from 'react-redux';
+import { TaskIds } from '../../utils/Constant';
 
 import './sidebar.css'
 
@@ -27,6 +28,7 @@ const DynamicRoleSidebar = () => {
     (dimension ? setDrawer(true) : setDrawer(false))
 
   }, [dimension])
+  const [isOpenTask, setIsOpenTask] = useState(false)
 
   let  { dynamicTaskList } = useSelector((state) => state.role);
 
@@ -51,6 +53,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
+     setIsOpenTask(true)
 
   };
   // -------------------------------------------------------------submenu=-------------------------------
@@ -81,6 +84,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
+     setIsOpenTask(true)
   };
 
   const toggleStore = () => {
@@ -94,6 +98,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
+     setIsOpenTask(true)
   };
   const toggleTransaction = () => {
     setIsOpenTrasaction(!isOpenTransaction)
@@ -106,6 +111,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
+     setIsOpenTask(true)
   }
 
   const toggleStock = () => {
@@ -119,6 +125,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
+     setIsOpenTask(true)
   }
 
   const toggleRole = () => {
@@ -132,6 +139,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenLoyalty(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
+     setIsOpenTask(true)
   }
   const toggleCustomer = () => {
     setIsOpenCustomer(!isOpenCustomer)
@@ -144,6 +152,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenLoyalty(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
+     setIsOpenTask(true)
   }
 
   const toggleLoyalty = () => {
@@ -157,6 +166,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenTrasaction(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
+     setIsOpenTask(true)
 
   }
   const toggleNurse = () => {
@@ -170,6 +180,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenStore(false)
     setIsOpenTrasaction(false)
     setIsOpenDiagnostic(false)
+     setIsOpenTask(true)
   }
 
   const toggleDiagnostic = () => {
@@ -195,7 +206,23 @@ const DynamicRoleSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
+     setIsOpenTask(true)
   }
+
+  const toggleTask = ()=>{
+    setIsOpenAmb(false);
+    setIsOpenVendor(false)
+    setIsOpenStock(false)
+    setIsOpenCustomer(false)
+    setIsOpenStore(false)
+    setIsOpenTrasaction(false)
+    setIsOpenLoyalty(false)
+    setIsOpenRole(false)
+    setIsOpenNurse(false)
+    setIsOpenDiagnostic(false)
+     setIsOpenTask(true)
+  }
+
 
 
   console.log(dynamicTaskList.includes(2202),'22')
@@ -255,7 +282,7 @@ const DynamicRoleSidebar = () => {
                   {/* ---------------------------Ambulance-------------------------------------------------------- */}
 
                   <div className="accordion-item">
-                  {dynamicTaskList.includes(5000) &&  <h2 className="accordion-header" id="headingOne">
+                  {dynamicTaskList.find(item=>item ===TaskIds.ADD_AMBULANCE || item ===TaskIds.UPDATE_AMBULANCE || item ===TaskIds.AMBULANCE_BOOKING_REPORT) &&  <h2 className="accordion-header" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Ambulance Management
                       </button>
@@ -311,7 +338,7 @@ const DynamicRoleSidebar = () => {
 
                   {/* -----------------------------------------Store-------------------------------------------- */}
                   <div class="accordion-item">
-                {   dynamicTaskList.includes(1000) &&   <h2 class="accordion-header" id="headingOne">
+                {   dynamicTaskList.find(item=>item === TaskIds.ADD_STORE ||item === TaskIds.EDIT_STORE ||item === TaskIds.ADD_USER ) &&   <h2 class="accordion-header" id="headingOne">
                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                         Store Master
                       </button>
@@ -378,7 +405,7 @@ const DynamicRoleSidebar = () => {
                   {/* ------------------------------------------------------------Diagnostice------------------------------------------- */}
 
                   <div class="accordion-item">
-                  {  dynamicTaskList.includes(6000) &&  <h2 class="accordion-header" id="headingOne">
+                  {  dynamicTaskList.find(item=>item===TaskIds.DIAGNOSTIC_CENTER_MANAGEMENT ||item===TaskIds.ADD_DIAGNOSTIC_CENTER ||item===TaskIds.EDIT_DIAGNOSTIC_CENTER ||item===TaskIds.ADD_MY_SERVICE ||item===TaskIds.UPDATE_MY_SERVICE ||item===TaskIds.SERVICE_REQUESTS) &&  <h2 class="accordion-header" id="headingOne">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifth" aria-expanded="true" aria-controls="collapseFifth">
                         Diagnostic Management
                       </button>
@@ -415,7 +442,7 @@ const DynamicRoleSidebar = () => {
                   </div>
                   {/* ------------------------------------------------------------Transaction------------------------------- */}
                   <div class="accordion-item">
-                  {   (dynamicTaskList.includes(2000)) &&   <h2 class="accordion-header" id="headingOne">
+                  {   (dynamicTaskList.find((item)=>item===TaskIds.TRANSACTION_MANAGEMENT || TaskIds.PURCHASE_MANAGEMENT ||TaskIds.UPLOAD_PURCHASES || TaskIds.PURCHASE_REPORT || TaskIds.ADD_PURCHASE_INVOICE ||TaskIds.EDIT_PURCHASE_INVOICE ||TaskIds.SALES_MANAGEMENT ||TaskIds.UPLOAD_SALES ||TaskIds.SALES_REPORT ||TaskIds.ADD_SALES_INVOICE ||TaskIds.EDIT_SALES_INVOICE )) &&   <h2 class="accordion-header" id="headingOne">
                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTransaction" aria-expanded="true" aria-controls="collapseTransaction">
                         Transaction Management
                       </button>
@@ -428,16 +455,16 @@ const DynamicRoleSidebar = () => {
                             <li className='sum-menu'>
                               <div class="accordion" id="accordionExample">
                                 <div className="collapsible-menu">
-                            <span className='side-navb' onClick={togglePurchase}>Purchase Management
+                          { (dynamicTaskList.find((item)=>item===TaskIds.PURCHASE_MANAGEMENT ||item===TaskIds.UPLOAD_PURCHASES ||item===TaskIds.PURCHASE_REPORT ||item===TaskIds.ADD_PURCHASE_INVOICE )) &&  <span className='side-navb' onClick={togglePurchase}>Purchase Management
                                     {!isOpenPurchase && <i class="collapseIcon cPointer fas fa-angle-down"></i>}
                                     {isOpenPurchase && <i class="collapseIcon cPointer fas fa-angle-up"></i>}
-                                  </span>
+                                  </span>}
                                   {isOpenPurchase && (
                                     <nav className='nav-open'>
                                       <ul>
-                                       <li className='sum-menu'>
+                                   {  dynamicTaskList.includes(2014) &&   <li className='sum-menu'>
                                           <NavLink to={"/role/dynamicUser/transaction/purchase/invoice"}>Purchase Invoice</NavLink>
-                                        </li>
+                                        </li>}
                                       {dynamicTaskList.includes(2102) &&   <li className='sum-menu'>
                                           <NavLink to={"/role/dynamicUser/transaction/purchase/upload"}>Upload Purchase</NavLink>
                                         </li>}
@@ -450,7 +477,7 @@ const DynamicRoleSidebar = () => {
                                   )}
                                 </div>
                                 <div className="collapsible-menu">
-                           {dynamicTaskList.includes(2201) &&        <span className='side-navb' onClick={toggleStock}>Sales Management
+                           { (dynamicTaskList.find((item)=>item===TaskIds.SALES_MANAGEMENT ||item===TaskIds.UPLOAD_SALES ||item===TaskIds.ADD_SALES_INVOICE ||item===TaskIds.SALES_REPORT )) &&      <span className='side-navb' onClick={toggleStock}>Sales Management
                                     {!isOpenStock && <i class="collapseIcon cPointer fas fa-angle-down"></i>}
                                     {isOpenStock && <i class="collapseIcon cPointer fas fa-angle-up"></i>}
                                   </span>}
@@ -480,9 +507,32 @@ const DynamicRoleSidebar = () => {
                       </div>
                     </div>
                   </div>
+
+                      {/* ------------------------------------------------------------Task------------------------------- */}
+                      <div class="accordion-item">
+                {  (dynamicTaskList.find((item)=>item===TaskIds.ADD_TASK ||item===TaskIds.UPDATE_TASK  )) &&   <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#taskCollapse" aria-expanded="true" aria-controls="taskCollapse">
+                        Task Management
+                      </button>
+                    </h2>}
+                    <div id="taskCollapse" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        <nav className='nav-open'>
+                          <ul>
+                          {dynamicTaskList.includes(8001) &&  <li className='sum-menu'>
+                              <NavLink to={"/role/dynamicUser/add-task"}>Add Task</NavLink>
+                            </li>}
+
+
+
+                          </ul>
+                        </nav>
+                      </div>
+                    </div>
+                  </div>
                   {/* ----------------------------------------------------------- Stock-------------------------------- */}
                   <div class="accordion-item">
-                  { dynamicTaskList.includes(4000) &&   <h2 class="accordion-header" id="headingOne">
+                  { (dynamicTaskList.find((item)=>item===TaskIds.STOCK_MANAGEMENT ||item===TaskIds.UPLOAD_STOCK_ONLINE ||item===TaskIds.STOCK_REPORT )) &&     <h2 class="accordion-header" id="headingOne">
                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSixth" aria-expanded="true" aria-controls="collapseSixth">
                         Stock Management
                       </button>
@@ -507,7 +557,7 @@ const DynamicRoleSidebar = () => {
                   </div>
                   {/* --------------------------------------------------------- Role------------------------------------ */}
                   <div class="accordion-item">
-                  { dynamicTaskList.includes(8000) &&    <h2 class="accordion-header" id="headingOne">
+                  { (dynamicTaskList.find((item)=>item===TaskIds.ROLE_MANAGEMENT ||item===TaskIds.ADD_ROLE ||item===TaskIds.UPDATE_ROLE )) &&     <h2 class="accordion-header" id="headingOne">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeventh" aria-expanded="true" aria-controls="collapseSeventh">
                         Role Management
                       </button>
@@ -1038,6 +1088,22 @@ const DynamicRoleSidebar = () => {
                   <li className='sum-menu'>
                     <NavLink to={"/role/dynamicUser/update-role"}>Update Role</NavLink>
                   </li>
+
+                </ul>
+              </nav>
+            )}
+          </div>
+          <div className="collapsible-menu">
+            <span className='side-navb' onClick={toggleTask}>
+              <i class="fa-solid fa-user-tag"></i>
+            </span>
+            {isOpenTask && (
+              <nav className='nav-closed'>
+                <ul onClick={toggleTask}>
+                  <li className='sum-menu'>
+                    <NavLink to={"/role/dynamicUser/add-task"}>Add Task</NavLink>
+                  </li>
+
 
                 </ul>
               </nav>

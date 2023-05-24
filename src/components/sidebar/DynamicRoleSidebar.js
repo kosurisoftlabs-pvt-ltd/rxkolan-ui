@@ -53,7 +53,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-     setIsOpenTask(true)
+     setIsOpenTask(false)
 
   };
   // -------------------------------------------------------------submenu=-------------------------------
@@ -84,7 +84,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-     setIsOpenTask(true)
+     setIsOpenTask(false)
   };
 
   const toggleStore = () => {
@@ -98,7 +98,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-     setIsOpenTask(true)
+     setIsOpenTask(false)
   };
   const toggleTransaction = () => {
     setIsOpenTrasaction(!isOpenTransaction)
@@ -111,7 +111,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-     setIsOpenTask(true)
+     setIsOpenTask(false)
   }
 
   const toggleStock = () => {
@@ -125,7 +125,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-     setIsOpenTask(true)
+     setIsOpenTask(false)
   }
 
   const toggleRole = () => {
@@ -139,7 +139,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenLoyalty(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-     setIsOpenTask(true)
+     setIsOpenTask(false)
   }
   const toggleCustomer = () => {
     setIsOpenCustomer(!isOpenCustomer)
@@ -152,7 +152,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenLoyalty(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-     setIsOpenTask(true)
+     setIsOpenTask(false)
   }
 
   const toggleLoyalty = () => {
@@ -166,7 +166,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenTrasaction(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-     setIsOpenTask(true)
+     setIsOpenTask(false)
 
   }
   const toggleNurse = () => {
@@ -180,7 +180,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenStore(false)
     setIsOpenTrasaction(false)
     setIsOpenDiagnostic(false)
-     setIsOpenTask(true)
+     setIsOpenTask(false)
   }
 
   const toggleDiagnostic = () => {
@@ -206,7 +206,7 @@ const DynamicRoleSidebar = () => {
     setIsOpenRole(false)
     setIsOpenNurse(false)
     setIsOpenDiagnostic(false)
-     setIsOpenTask(true)
+     setIsOpenTask(false)
   }
 
   const toggleTask = ()=>{

@@ -963,24 +963,24 @@ const DynamicRoleSidebar = () => {
 
           </div>
           <div className="collapsible-menu">
-            <span className='side-navb' onClick={toggleAmbulance}>
+         {   dynamicTaskList.find(item=>item ===TaskIds.ADD_AMBULANCE || item ===TaskIds.UPDATE_AMBULANCE || item ===TaskIds.AMBULANCE_BOOKING_REPORT) &&  <span className='side-navb' onClick={toggleAmbulance}>
               <i class="fa-solid fa-truck-medical"></i>
-            </span>
+            </span>}
             {isOpenAmb && (
               <nav className='nav-closed'>
                 <ul>
-                  <li className='sum-menu'>
+                { dynamicTaskList.includes(5001) && <li className='sum-menu'>
                     <NavLink to={"/role/dynamicUser/add-ambulane"}>Add Ambulance</NavLink>
-                  </li>
-                  <li className='sum-menu'>
+                  </li>}
+               {  dynamicTaskList.includes(5002) && <li className='sum-menu'>
                     <NavLink to={"/role/dynamicUser/verify-ambulane"}>Verify Ambulance</NavLink>
-                  </li>
-                  <li className='sum-menu'>
+                  </li>}
+               {   dynamicTaskList.includes(5003) &&<li className='sum-menu'>
                     <NavLink to={"/role/dynamicUser/update-ambulane"}>Update Ambulance</NavLink>
-                  </li>
-                  <li className='sum-menu'>
+                  </li>}
+               {  dynamicTaskList.includes(5004) && <li className='sum-menu'>
                     <NavLink to={"/role/dynamicUser/report-ambulane"}>Ambulance Report</NavLink>
-                  </li>
+                  </li>}
                 </ul>
               </nav>
             )}
@@ -1012,97 +1012,97 @@ const DynamicRoleSidebar = () => {
 
 
           <div className="collapsible-menu">
-            <span className='side-navb' onClick={toggleStore}>
+       {  dynamicTaskList.find(item=>item === TaskIds.ADD_STORE ||item === TaskIds.EDIT_STORE ||item === TaskIds.ADD_USER ) &&   <span className='side-navb' onClick={toggleStore}>
               <i class="fa-solid fa-store"></i>
-            </span>
+            </span>}
             {isOpenStore && (
               <nav className='nav-closed'>
                 <ul  onClick={toggleStore}>
-                  <li className='sum-menu'>
+            {dynamicTaskList.includes(1001) &&       <li className='sum-menu'>
                     <NavLink to={"/role/dynamicUser/create-store"}>Create Store</NavLink>
-                  </li>
+                  </li>}
 
-                  <li className='sum-menu'>
+              {  dynamicTaskList.includes(1002) &&   <li className='sum-menu'>
                     <NavLink to={"/role/dynamicUser/update-store"}>Update Store</NavLink>
-                  </li>
-                  <li className='sum-menu'>
+                  </li>}
+                { dynamicTaskList.includes(1003) &&  <li className='sum-menu'>
                     <NavLink to={"/role/dynamicUser/add-store-manager"}>Add Store Manager</NavLink>
-                  </li>
+                  </li>}
                 </ul>
               </nav>
             )}
           </div>
 
           <div className="collapsible-menu">
-            <span className='side-navb' onClick={toggleTransaction}>
+          { (dynamicTaskList.find((item)=>item===TaskIds.TRANSACTION_MANAGEMENT || TaskIds.PURCHASE_MANAGEMENT ||TaskIds.UPLOAD_PURCHASES || TaskIds.PURCHASE_REPORT || TaskIds.ADD_PURCHASE_INVOICE ||TaskIds.EDIT_PURCHASE_INVOICE ||TaskIds.SALES_MANAGEMENT ||TaskIds.UPLOAD_SALES ||TaskIds.SALES_REPORT ||TaskIds.ADD_SALES_INVOICE ||TaskIds.EDIT_SALES_INVOICE )) && <span className='side-navb' onClick={toggleTransaction}>
               <i class="fa-solid fa-exchange-alt"></i>
-            </span>
+            </span>}
             {isOpenTransaction && (
               <nav className='nav-closed'>
                 <ul   onClick={()=>{
                 toggleTransaction()
                     setDrawer(!drawer)
                 }}>
-                  <li className='sum-menu'>
+               { dynamicTaskList.includes(2101) &&    <li className='sum-menu'>
                     <NavLink to={"/role/dynamicUser/transaction/purchase/upload"}>Purchase Management</NavLink>
-                  </li>
+                  </li>}
 
-                  <li className='sum-menu'>
+             {  dynamicTaskList.includes(2201) &&     <li className='sum-menu'>
                     <NavLink to={"/role/dynamicUser/transaction/sales/upload"}>Sales Management</NavLink>
-                  </li>
+                  </li>}
 
                 </ul>
               </nav>
             )}
           </div>
           <div className="collapsible-menu">
-            <span className='side-navb' onClick={toggleStock}>
+        { (dynamicTaskList.find((item)=>item===TaskIds.STOCK_MANAGEMENT ||item===TaskIds.UPLOAD_STOCK_ONLINE ||item===TaskIds.STOCK_REPORT )) &&    <span className='side-navb' onClick={toggleStock}>
               <i class="fa-solid fa-warehouse"></i>
-            </span>
+            </span>}
             {isOpenStock && (
               <nav className='nav-closed'>
                 <ul onClick={toggleStock}>
-                  <li className='sum-menu'>
+              { dynamicTaskList.includes(4102) &&   <li className='sum-menu'>
                     <NavLink to={"/role/dynamicUser/upload-stock"}>Upload Stock</NavLink>
-                  </li>
+                  </li>}
 
-                  <li className='sum-menu'>
+           {    dynamicTaskList.includes(4101) &&   <li className='sum-menu'>
                     <NavLink to={"/role/dynamicUser/report-stock"}>Report Stock</NavLink>
-                  </li>
+                  </li>}
 
                 </ul>
               </nav>
             )}
           </div>
           <div className="collapsible-menu">
-            <span className='side-navb' onClick={toggleRole}>
+      {   (dynamicTaskList.find((item)=>item===TaskIds.ROLE_MANAGEMENT ||item===TaskIds.ADD_ROLE ||item===TaskIds.UPDATE_ROLE )) &&      <span className='side-navb' onClick={toggleRole}>
               <i class="fa-solid fa-user-tag"></i>
-            </span>
+            </span>}
             {isOpenRole && (
               <nav className='nav-closed'>
                 <ul onClick={toggleRole}>
-                  <li className='sum-menu'>
+                 {dynamicTaskList.includes(8003) &&  <li className='sum-menu'>
                     <NavLink to={"/role/dynamicUser/add-role"}>Add Role</NavLink>
-                  </li>
+                  </li>}
                   {/* <br/> */}
-                  <li className='sum-menu'>
+             {   dynamicTaskList.includes(8004) &&   <li className='sum-menu'>
                     <NavLink to={"/role/dynamicUser/update-role"}>Update Role</NavLink>
                   </li>
-
+}
                 </ul>
               </nav>
             )}
           </div>
           <div className="collapsible-menu">
-            <span className='side-navb' onClick={toggleTask}>
+        {  (dynamicTaskList.find((item)=>item===TaskIds.ADD_TASK ||item===TaskIds.UPDATE_TASK  )) &&  <span className='side-navb' onClick={toggleTask}>
               <i class="fa-solid fa-user-tag"></i>
-            </span>
+            </span>}
             {isOpenTask && (
               <nav className='nav-closed'>
                 <ul onClick={toggleTask}>
-                  <li className='sum-menu'>
+               {  dynamicTaskList.includes(8001)&& <li className='sum-menu'>
                     <NavLink to={"/role/dynamicUser/add-task"}>Add Task</NavLink>
-                  </li>
+                  </li>}
 
 
                 </ul>
@@ -1110,9 +1110,9 @@ const DynamicRoleSidebar = () => {
             )}
           </div>
           <div className="collapsible-menu">
-            <span className='side-navb' onClick={toggleCustomer}>
+         {  dynamicTaskList.includes(3000) && <span className='side-navb' onClick={toggleCustomer}>
               <i class="fa-solid fa-users"></i>
-            </span>
+            </span>}
             {isOpenCustomer && (
               <nav className='nav-closed'>
                 <ul>
@@ -1129,9 +1129,9 @@ const DynamicRoleSidebar = () => {
             )}
           </div>
           <div className="collapsible-menu">
-            <span className='side-navb' onClick={toggleLoyalty}>
+       {   dynamicTaskList.includes(2201) &&     <span className='side-navb' onClick={toggleLoyalty}>
               <i class="fa-solid fa-fingerprint"></i>
-            </span>
+            </span>}
             {isOpenLoyalty && (
               <nav className='nav-closed'>
                 <ul onClick={toggleLoyalty}>

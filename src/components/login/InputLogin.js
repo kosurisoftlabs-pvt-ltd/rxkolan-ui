@@ -87,7 +87,7 @@ const InputLogin = () => {
         </div>
         <div>
           <InputField
-            type={"passworrd"}
+            type={"password"}
             name={"Password"}
             value={password}
             handleChange={(e) => setPassword(e.target.value)}
